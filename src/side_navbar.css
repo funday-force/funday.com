@@ -4,10 +4,10 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
 
-body {
+/* body {
     font-family: 'Poppins', sans-serif;
     /* background:  */
-}
+
 
 p {
     font-family: 'Poppins', sans-serif;
@@ -36,7 +36,7 @@ a, a:hover, a:focus {
     box-shadow: none;
     outline: none !important;
     border: none;
-}
+} 
 
 .line {
     width: 100%;

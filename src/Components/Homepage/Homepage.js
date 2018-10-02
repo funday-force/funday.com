@@ -26,7 +26,7 @@ export default class Homepage extends Component {
         <nav className="navbar fixed-top navbar-expand-sm transparent">
           <div className="container">
             <div className="navbar-brand">
-              <a href="#top">
+              <a href="#">
                 <img width="215" src={logo} alt="logo" />
               </a>
             </div>

@@ -7,6 +7,9 @@ import arrow from '../../images/arrow.PNG';
 import actionLeft from '../../images/action-left.PNG';
 import actionRight from '../../images/action-right.PNG';
 
+import funday from '../../images/funday-force-logo.jpg';
+import fundayBlack from '../../images/funday-force-black.jpg';
+
 export default class Creators extends Component {
   render() {
     return (
@@ -24,11 +27,7 @@ export default class Creators extends Component {
                   <div className="creators-images">
                     <img src={hunter} alt="hunter" className="img-fluid" />
                     <h5 className="text-center">Hunter Luker</h5>
-                    <img
-                      className="img-fluid"
-                      src="https://monday.com/static/uploads/AviramGabay/rednered-logoX2.png"
-                      alt=""
-                    />
+                    <img className="img-fluid" src={funday} alt="" />
                   </div>
                   <div className="creators-images">
                     <img
@@ -37,20 +36,12 @@ export default class Creators extends Component {
                       className="img-fluid"
                     />
                     <h5 className="text-center">Tessa Coddington</h5>
-                    <img
-                      className="img-fluid"
-                      src="https://monday.com/static/uploads/AviramGabay/discovery-logoX2.png"
-                      alt=""
-                    />
+                    <img className="img-fluid" src={fundayBlack} alt="" />
                   </div>
                   <div className="creators-images">
                     <img src={larry} alt="larry" className="img-fluid" />
                     <h5 className="text-center">Larry Guerra</h5>
-                    <img
-                      className="img-fluid"
-                      src="https://monday.com/static/uploads/AviramGabay/rednered-logoX2.png"
-                      alt=""
-                    />
+                    <img className="img-fluid" src={funday} alt="" />
                   </div>
                   <div className="creators-images">
                     <img
@@ -59,11 +50,7 @@ export default class Creators extends Component {
                       className="img-fluid"
                     />
                     <h5 className="text-center">Jace Holdaway</h5>
-                    <img
-                      className="img-fluid"
-                      src="https://monday.com/static/uploads/AviramGabay/discovery-logoX2.png"
-                      alt=""
-                    />
+                    <img className="img-fluid" src={fundayBlack} alt="" />
                   </div>
                 </div>
               </div>

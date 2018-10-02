@@ -8,6 +8,7 @@
 .react-calendar button {
   background: #1d1e3d;
   color: rgb(160, 160, 160);
+  border: none;
 }
 
 .days {

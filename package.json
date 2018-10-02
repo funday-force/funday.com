@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "react": "^16.5.2",
+    "react-calendar": "^2.17.4",
+    "react-date-picker": "^6.12.1",
     "react-dom": "^16.5.2",
     "react-scripts": "1.1.5"
   },

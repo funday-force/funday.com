@@ -11,6 +11,14 @@ import Creators from './Creators';
 import Footer from './Footer';
 
 export default class Homepage extends Component {
+  login() {
+    const { REACT_APP_DOMAIN, REACT_APP_CLIENT_ID } = process.env;
+
+    let url = `${encodeURIComponent(window.location.origin)}/auth/callback`;
+
+    window.location = `https://${REACT_APP_DOMAIN}/authorize?client_id=${REACT_APP_CLIENT_ID}&scope=openid%20profile%20email&redirect_uri=${url}&response_type=code`;
+  }
+
   render() {
     $(window).scroll(function() {
       var scroll = $(window).scrollTop();
@@ -55,7 +63,7 @@ export default class Homepage extends Component {
                 </a>
               </li>
 
-              <li className="nav-item login-btn">
+              <li className="nav-item login-btn" onClick={this.login}>
                 <a href="#" className="nav-link">
                   Log in
                 </a>

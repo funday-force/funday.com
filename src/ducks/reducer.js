@@ -1,4 +1,7 @@
 const initialState = {
-    // initial state
-}
+    emailInput: ""
+};
 
+export default function reducer(){
+    
+}

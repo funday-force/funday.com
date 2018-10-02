@@ -5,6 +5,9 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 import './App.css';
 
+// COMPONENTS
+import Homepage from './Components/Homepage/Homepage';
+
 class App extends Component {
   render() {
     return (
@@ -12,6 +15,7 @@ class App extends Component {
       {/* <h1>Funday</h1> */}
       <Header />
       <Side_Navbar />
+        <Homepage />
       </div>
     );
   }

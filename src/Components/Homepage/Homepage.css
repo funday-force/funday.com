@@ -1,0 +1,306 @@
+.nav-scroll {
+  z-index: 5;
+  background: white;
+  border-bottom: 0.1px solid rgb(211, 211, 211);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+nav a {
+  color: #333 !important;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+nav li {
+  margin-left: 15px;
+}
+
+nav.navbar {
+  margin-top: -15px;
+}
+
+.navbar-nav {
+  margin-top: 20px;
+}
+
+.login-btn {
+  line-height: 0;
+  border: 1px solid black !important;
+  border-radius: 24px;
+  padding: 0px 20px;
+  padding-top: 10px;
+  color: #333;
+}
+
+.login-btn a {
+  font-weight: 300 !important;
+  margin-bottom: 10px;
+  font-size: 16px !important;
+}
+
+.login-btn:hover,
+a:hover {
+  border-color: rgb(206, 42, 206) !important;
+  color: rgb(206, 42, 206) !important;
+}
+
+.product:hover {
+  color: rgb(206, 42, 206) !important;
+}
+
+.use-cases:hover {
+  color: rgb(16, 209, 16) !important;
+}
+
+.why:hover {
+  color: rgb(233, 0, 128) !important;
+}
+
+.creators:hover {
+  color: rgb(73, 91, 255) !important;
+}
+
+/* HERO */
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150px !important;
+  margin: 64px;
+}
+
+.hero-container h1 {
+  font-weight: bold;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-container h1 span {
+  color: blueviolet;
+}
+
+.hero-container p {
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+
+.form-input {
+  font-size: 16px;
+  padding: 16px 29px;
+  -webkit-appearance: none;
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid;
+  border-color: #ccc;
+  outline: none;
+  text-align: left;
+  -webkit-transition: border-color 0.1s ease-in-out;
+  transition: border-color 0.1s ease-in-out;
+  margin: 8px 16px 8px 0;
+}
+
+.form-button {
+  padding: 18px 32px;
+  font-weight: 300;
+  background-color: #595ad4;
+  color: #fff;
+  border-radius: 40px;
+}
+
+.form-button:hover {
+  background: #3636ce;
+}
+
+.car {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 64px !important;
+}
+
+.car1 {
+  border: 2px solid blueviolet;
+  width: 900px;
+}
+
+.car2 {
+  border: 2px solid rgb(233, 0, 128);
+  width: 900px;
+}
+
+.car3 {
+  border: 2px solid rgb(16, 209, 16);
+  width: 900px;
+}
+
+/* PRODUCT */
+
+.product-container {
+  margin-top: 80px !important;
+}
+
+.product-1 {
+  display: flex;
+  flex-direction: row;
+  margin-left: 30px;
+}
+
+.product-2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.product-desc {
+  padding: 20px;
+  float: left;
+}
+
+.product-desc p:first-child {
+  color: rgb(36, 166, 252);
+}
+
+.product-desc h2 {
+  font-weight: 700 !important;
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.product-desc p:last-child {
+  line-height: 2 !important;
+}
+
+.product-video {
+  width: 70%;
+}
+
+.product-video-2 {
+  width: 50%;
+}
+
+video {
+  width: 100%;
+}
+
+.product-desc-2 {
+  margin-top: 20px;
+  width: 50%;
+  margin-left: 30px;
+  padding: 20px;
+}
+
+.product-desc-2 p:first-child {
+  color: rgb(16, 209, 16);
+}
+
+.product-desc-2 p:last-child {
+  line-height: 2 !important;
+}
+
+.product-desc-2 h2 {
+  font-weight: 700 !important;
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+/* DESCRIPTION */
+
+.work-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+
+.video-1-container {
+  width: 50%;
+  text-align: center;
+  padding: 30px;
+}
+
+.video-1-container h3 {
+  margin: 20px 0px;
+  font-weight: 700;
+}
+
+.video-1-container p {
+  line-height: 2;
+}
+
+.video-2-container {
+  width: 50%;
+  text-align: center;
+  padding: 30px;
+}
+
+.video-2-container h3 {
+  margin: 20px 0px;
+  font-weight: 700;
+}
+
+.video-2-container p {
+  line-height: 2;
+}
+
+/* CREATORS */
+
+.creators-section h1 {
+  font-weight: bold;
+}
+
+.teams-span {
+  color: rgb(206, 42, 206);
+}
+
+.images-container {
+  display: flex;
+}
+
+.creators-images {
+  margin: 10px;
+}
+
+.creators-images img:first-child {
+  width: 100%;
+  border: 0.1px solid rgba(0, 0, 0, 0.1);
+  padding: 5px;
+}
+
+.creators-images img:last-child {
+  width: 120px;
+  margin-left: 70px;
+  margin-top: 10px;
+}
+
+.creators-images h5 {
+  margin: 20px 0;
+}
+
+.signup-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup-section h1 {
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+/* FOOTER */
+.left-footer {
+  float: left;
+}
+
+.right-footer {
+  float: right;
+}
+
+.legal {
+  position: relative;
+  top: 50px;
+  left: 250px;
+  width: 50%;
+}
+
+.legal img {
+  position: relative;
+  left: 10px;
+}

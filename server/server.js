@@ -134,6 +134,10 @@ app.put('/api/users/:id', userCtrl.updateUser);
 // TEAM ENPOINTS
 app.get('/api/team', teamCtrl.getTeam);
 
+app.post('/api/team', teamCtrl.addTeamMember);
+
+app.delete('/api/team/:id', teamCtrl.removeMember);
+
 // MESSAGES ENDPOINTS
 app.get('/api/messages', messagesCtrl.getMessages);
 

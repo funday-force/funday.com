@@ -6,6 +6,8 @@ const massive = require('massive');
 const axios = require('axios');
 
 const userCtrl = require('./users-controller');
+const teamCtrl = require('./team-controller');
+const messagesCtrl = require('./messages-controller');
 
 // Init epxress app
 const app = express();
@@ -62,7 +64,15 @@ app.get(`/auth/callback`, async (req, res) => {
   );
   console.log('user data', resWithUserData.data);
 
-  let { name, email, phone, location, title, sub } = resWithUserData.data;
+  let {
+    name,
+    email,
+    phone,
+    location,
+    title,
+    picture,
+    sub
+  } = resWithUserData.data;
 
   const db = req.app.get('db');
   let foundUser = await db.find_user([sub]);
@@ -77,6 +87,7 @@ app.get(`/auth/callback`, async (req, res) => {
       phone,
       location,
       title,
+      picture,
       sub
     ]);
     req.session.user = createdUser[0];
@@ -121,6 +132,16 @@ app.delete('/api/users/:id', userCtrl.removeUser);
 app.put('/api/users/:id', userCtrl.updateUser);
 
 // TEAM ENPOINTS
+app.get('/api/team', teamCtrl.getTeam);
+
+// MESSAGES ENDPOINTS
+app.get('/api/messages', messagesCtrl.getMessages);
+
+app.post('/api/messages', messagesCtrl.createMessage);
+
+app.delete('/api/messages/:id', messagesCtrl.deleteMessage);
+
+app.put('/api/messages/:id', messagesCtrl.updateMessage);
 
 // Listen on a port
 app.listen(SERVER_PORT, () => console.log(`Listening on port: ${SERVER_PORT}`));

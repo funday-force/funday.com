@@ -1,30 +1,45 @@
 module.exports = {
-  getUsers: (req, res) => {
+  getMessages: (req, res) => {
     const db = req.app.get('db');
 
-    db.get_all_users()
-      .then(resp => {
-        res.status(200).send(resp);
-      })
-      .catch(err => console.log(err));
-  },
-  removeUser: (req, res) => {
-    const db = req.app.get('db');
-    const { id } = req.params;
-
-    db.delete_user([id])
+    db.get_messages()
       .then(resp => {
         res.status(200).send(resp);
       })
       .catch(err => console.log(err));
   },
 
-  updateUser: (req, res) => {
+  createMessage: (req, res) => {
     const db = req.app.get('db');
-    const { id } = req.params;
-    const { name, email, phone, location, title, picture } = req.body;
 
-    db.update_user([name, email, phone, location, title, picture, id])
+    const { message } = req.body;
+
+    db.create_message([message])
+      .then(resp => {
+        res.status(200).send(resp);
+      })
+      .catch(err => console.log(err));
+  },
+
+  deleteMessage: (req, res) => {
+    const db = req.app.get('db');
+
+    const { id } = req.params;
+
+    db.delete_message([id])
+      .then(resp => {
+        res.status(200).send(resp);
+      })
+      .catch(err => console.log(err));
+  },
+
+  updateMessage: (req, res) => {
+    const db = req.app.get('db');
+
+    const { id } = req.params;
+    const { message } = req.body;
+
+    db.update_message([message, id])
       .then(resp => {
         res.status(200).send(resp);
       })

@@ -62,18 +62,20 @@ app.get(`/auth/callback`, async (req, res) => {
 
   let { email, name, picture, sub } = resWithUserData.data;
 
-  const db = req.app.get('db');
-  let foundUser = await db.find_user([sub]);
+  res.redirect('/#/navbar');
 
-  if (foundUser[0]) {
-    req.session.user = foundUser[0];
-    res.redirect('/#/dashboard');
-  } else {
-    let createdUser = await db.create_user([name, email, picture, sub]);
-    req.session.user = createdUser[0];
+  // const db = req.app.get('db');
+  // let foundUser = await db.find_user([sub]);
 
-    res.redirect('/#/dashboard');
-  }
+  // if (foundUser[0]) {
+  //   req.session.user = foundUser[0];
+  //   res.redirect('/#/navbar');
+  // } else {
+  //   let createdUser = await db.create_user([name, email, picture, sub]);
+  //   req.session.user = createdUser[0];
+
+  //   res.redirect('/#/navbar');
+  // }
 });
 
 function envCheck(req, res, next) {

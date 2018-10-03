@@ -64,9 +64,7 @@ export default class Homepage extends Component {
               </li>
 
               <li className="nav-item login-btn" onClick={this.login}>
-                <a href="#" className="nav-link">
-                  Log in
-                </a>
+                <a className="nav-link">Log in</a>
               </li>
             </ul>
           </div>

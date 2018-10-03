@@ -45,8 +45,8 @@ a:focus {
 }
 
 #sidebar {
-  min-width: 250px;
-  max-width: 250px;
+  min-width: 275px;
+  max-width: 275px;
   background: #f6f6f6;
   /* color: black; */
   transition: all 0.6s cubic-bezier(0.945, 0.02, 0.27, 0.665);
@@ -105,8 +105,8 @@ a[aria-expanded='true']::before {
   content: '\e259';
   display: block;
   position: absolute;
-  right: 140px;
-  bottom: 25px;
+  right: 90px;
+  bottom: 26px;
   font-family: 'Glyphicons Halflings';
   font-size: 0.6em;
 }

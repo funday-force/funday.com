@@ -1,11 +1,11 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Navbar from './side-navbar';
-import Homepage from './Components/Homepage/Homepage';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import Homepage from "./Components/Homepage/Homepage";
+import Dashboard from "./Components/Dashboard/Dashboard";
 
 export default (
   <Switch>
     <Route exact path="/" component={Homepage} />
-    <Route path="/navbar" component={Navbar} />
+    <Route path="/dashboard" component={Dashboard} />
   </Switch>
 );

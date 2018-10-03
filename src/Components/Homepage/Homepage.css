@@ -30,16 +30,18 @@ nav.navbar {
   padding: 0px 20px;
   padding-top: 10px;
   color: #333;
+  cursor: pointer;
 }
 
 .login-btn a {
   font-weight: 300 !important;
   margin-bottom: 10px;
   font-size: 16px !important;
+  cursor: pointer;
 }
 
 .login-btn:hover,
-a:hover {
+.login-btn a:hover {
   border-color: rgb(206, 42, 206) !important;
   color: rgb(206, 42, 206) !important;
 }

@@ -13,9 +13,11 @@ class navbar extends React.Component {
   }
 
   async componentDidMount() {
-    let userData = await axios.get('/api/user-data');
-
-    this.props.updateUser(userData.data);
+    let userData = await axios.get('/api/user-data').then(res => {
+      this.setState({
+        user: res.data
+      });
+    });
   }
 
   render() {

@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const massive = require('massive');
 const axios = require('axios');
 
+const userCtrl = require('./users-controller');
+
 // Init epxress app
 const app = express();
 
@@ -60,22 +62,27 @@ app.get(`/auth/callback`, async (req, res) => {
   );
   console.log('user data', resWithUserData.data);
 
-  let { email, name, picture, sub } = resWithUserData.data;
+  let { name, email, phone, location, title, sub } = resWithUserData.data;
 
-  res.redirect('/#/navbar');
+  const db = req.app.get('db');
+  let foundUser = await db.find_user([sub]);
 
-  // const db = req.app.get('db');
-  // let foundUser = await db.find_user([sub]);
+  if (foundUser[0]) {
+    req.session.user = foundUser[0];
+    res.redirect('/#/navbar');
+  } else {
+    let createdUser = await db.create_user([
+      name,
+      email,
+      phone,
+      location,
+      title,
+      sub
+    ]);
+    req.session.user = createdUser[0];
 
-  // if (foundUser[0]) {
-  //   req.session.user = foundUser[0];
-  //   res.redirect('/#/navbar');
-  // } else {
-  //   let createdUser = await db.create_user([name, email, picture, sub]);
-  //   req.session.user = createdUser[0];
-
-  //   res.redirect('/#/navbar');
-  // }
+    res.redirect('/#/navbar');
+  }
 });
 
 function envCheck(req, res, next) {
@@ -105,6 +112,15 @@ app.get('/auth/logout', (req, res) => {
 
   res.redirect('http://localhost:3000/');
 });
+
+// USER ENDPOINTS
+app.get('/api/users', userCtrl.getUsers);
+
+app.delete('/api/users/:id', userCtrl.removeUser);
+
+app.put('/api/users/:id', userCtrl.updateUser);
+
+// TEAM ENPOINTS
 
 // Listen on a port
 app.listen(SERVER_PORT, () => console.log(`Listening on port: ${SERVER_PORT}`));

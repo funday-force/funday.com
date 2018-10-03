@@ -1,4 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import axios from "axios";
+import Navbar from "../../side-navbar.js";
+import Header from '../../Header.js';
 
 export default class Dashboard extends Component {
   constructor(props) {
@@ -10,7 +13,7 @@ export default class Dashboard extends Component {
   }
 
   async componentDidMount() {
-    let userData = await axios.get('/api/user-data');
+    let userData = await axios.get("/api/user-data");
 
     this.props.updateUser(userData.data);
   }
@@ -18,7 +21,8 @@ export default class Dashboard extends Component {
   render() {
     return (
       <div>
-        <h1>Dashboard</h1>
+        <Header />
+        <Navbar />
       </div>
     );
   }

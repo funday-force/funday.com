@@ -1,0 +1,102 @@
+.header-bar {
+  height: 85px;
+  background-color: #eee !important;
+}
+
+.header-logo {
+  width: 300px;
+  position: relative;
+  right: 25px;
+  top: 5px;
+}
+
+.top-header {
+  position: absolute;
+  top: 20px;
+  left: 260px;
+  width: 78%;
+}
+
+.top-header .bell-icon {
+  margin-top: 1px;
+  font-size: 25px;
+  border-right: 0.5px solid rgb(182, 182, 182);
+  padding-right: 20px;
+  margin-right: 10px;
+  color: rgb(92, 92, 92);
+}
+
+.top-header .users-icon {
+  font-size: 25px;
+  padding-left: 10px;
+  color: rgb(92, 92, 92);
+}
+
+.search-bar {
+  border-radius: 50px;
+  margin-left: 20px;
+  height: 30px;
+  font-size: 15px;
+  width: 270px;
+  position: relative;
+  top: -1px;
+  padding: 3px 0px 3px 12px;
+  background-color: #fff !important;
+  border: 1px solid #c4c4c4;
+}
+
+.search-bar:focus {
+  outline: none !important;
+  border: 1px solid #66ccf5;
+}
+
+.search-icon {
+  font-size: 13px;
+  position: relative;
+  top: -3px;
+  color: rgb(167, 167, 167);
+  left: 280px;
+  z-index: 500;
+}
+
+.invite-span {
+  margin-top: 3px !important;
+  display: inline-block;
+  color: rgb(100, 100, 100);
+}
+
+.invite-span:hover {
+  cursor: pointer;
+  color: #4cc0ee;
+}
+
+.invite-span i {
+  color: #4cc0ee;
+  margin-right: 5px;
+}
+
+.profile-img {
+  width: 40px;
+  border-radius: 50%;
+  border: 0.8px solid rgb(87, 87, 87);
+}
+
+.profile-div {
+  float: right;
+  border-left: 1px solid rgb(199, 199, 199);
+  margin-left: 15px;
+  padding-left: 15px;
+  position: relative;
+  top: -5px;
+}
+
+.profile-div i {
+  font-size: 18px;
+  position: relative;
+  color: rgb(59, 59, 59);
+  top: 3px;
+}
+
+.profile-div:hover {
+  cursor: pointer;
+}

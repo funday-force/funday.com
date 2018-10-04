@@ -1,10 +1,7 @@
-import React, { Component } from "react";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-import routes from "./routes";
-
-// COMPONENTS
-import Homepage from "./Components/Homepage/Homepage";
+import React, { Component } from 'react';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import routes from './routes';
 
 class App extends Component {
   render() {

@@ -1,7 +1,6 @@
 import React from 'react';
 import './side_navbar.css';
 import $ from 'jquery';
-import axios from 'axios';
 
 class navbar extends React.Component {
   constructor(props) {
@@ -10,14 +9,6 @@ class navbar extends React.Component {
     this.state = {
       user: {}
     };
-  }
-
-  async componentDidMount() {
-    let userData = await axios.get('/api/user-data').then(res => {
-      this.setState({
-        user: res.data
-      });
-    });
   }
 
   render() {
@@ -29,11 +20,8 @@ class navbar extends React.Component {
     });
     return (
       <div>
-        <div class="wrapper">
+        <div className="wrapper">
           <nav id="sidebar">
-            {/* <div class="sidebar-header">
-        <h3>Collapsible Sidebar</h3>
-    </div> */}
             <ul className="list-unstyled components">
               <li className="active">
                 <a href="#">Inbox</a>
@@ -41,18 +29,22 @@ class navbar extends React.Component {
               <li>
                 <a href="#">Calendar</a>
               </li>
-              {/* <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
-            <ul class="collapse list-unstyled" id="homeSubmenu">
-                <li><a href="#">Page</a></li>
-                <li><a href="#">Page</a></li>
-                <li><a href="#">Page</a></li>
-            </ul> */}
+
               <li>
                 <a
                   href="#homeSubmenu"
                   data-toggle="collapse"
                   aria-expanded="false"
                 >
+                  <i
+                    className="fa fa-bars"
+                    style={{
+                      marginRight: '10px',
+                      fontSize: '14px',
+                      position: 'relative',
+                      bottom: '2px'
+                    }}
+                  />
                   Boards
                 </a>
               </li>

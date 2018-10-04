@@ -2,9 +2,8 @@ import React from "react";
 import logo from "../../images/headerlogo.png";
 import "./Header.css";
 import axios from "axios";
-import { isType } from "graphql";
 import { Link } from 'react-router-dom';
-// import {Link} from 'react-router-dom'
+
 
 class Header extends React.Component {
   constructor(props) {

@@ -1,6 +1,7 @@
 import React from 'react';
 import './side_navbar.css';
 import $ from 'jquery';
+import { Link } from 'react-router-dom';
 
 class navbar extends React.Component {
   constructor(props) {
@@ -24,10 +25,11 @@ class navbar extends React.Component {
           <nav id="sidebar">
             <ul className="list-unstyled components">
               <li className="active">
-                <a href="#">Inbox</a>
+                <Link to="/dashboard">Inbox</Link>
               </li>
+
               <li>
-                <a href="#">Calendar</a>
+                <Link to="/dashboard/calendar">Calendar</Link>
               </li>
 
               <li>

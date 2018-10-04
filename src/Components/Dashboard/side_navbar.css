@@ -14,6 +14,10 @@ a:focus {
   border: none;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 /* .line {
   width: 100%;
   height: 1px;
@@ -28,6 +32,7 @@ a:focus {
   display: flex;
   align-items: stretch;
   perspective: 1500px;
+  overflow: hidden;
 }
 
 #sidebar {
@@ -119,7 +124,7 @@ a.article:hover {
 #content {
   padding-top: 18px;
   margin-left: -20px;
-  min-height: 100vh;
+  min-height: calc(100vh - 70px);
   transition: all 0.3s;
 }
 

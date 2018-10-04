@@ -1,0 +1,89 @@
+.message-container {
+  border: 0.3px solid rgb(190, 190, 190);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  width: 100%;
+  height: 165px;
+  position: relative;
+  right: 13px;
+  margin: 20px 0;
+}
+
+.message-sender {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.sender-name {
+  display: inline-block;
+  color: #3ab7e9;
+}
+
+.message {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  border-bottom: 0.5px solid rgb(196, 196, 196);
+}
+
+.message-right {
+  float: right;
+  position: absolute;
+  right: 35px;
+  top: 20px;
+}
+
+.message-right i {
+  position: absolute;
+  top: 3px;
+  right: -25px;
+  font-size: 14px;
+}
+
+.date {
+  font-size: 14px;
+  color: rgb(194, 194, 194);
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  right: -50px;
+  font-size: 35px;
+  color: #0fa2e2;
+  text-shadow: 1px 1px #087bac;
+}
+
+.checkmark:hover {
+  cursor: pointer;
+  color: #0b90c9;
+}
+
+.trash-icon {
+  position: absolute;
+  bottom: 6px;
+  right: 35px;
+  font-size: 18px;
+}
+
+.trash-icon:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.edit-icon {
+  position: absolute;
+  bottom: 5px;
+  right: 70px;
+  font-size: 16px;
+  font-weight: bold;
+  border-right: 1px solid black;
+  padding-right: 20px;
+}
+
+.edit-icon:hover {
+  cursor: pointer;
+  color: green;
+}

@@ -1,26 +1,12 @@
-/*
-    DEMO STYLE
-*/
-@import 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700';
-
-/* body {
-    font-family: 'Poppins', sans-serif;
-    /* background:  */
-
-/* p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1em;
-  font-weight: 300;
-  line-height: 1.7em;
-} */
-
-a,
+/* a,
 a:hover,
 a:focus {
+  font-family: 'Roboto', sans-serif;
   color: inherit;
   text-decoration: none;
   transition: all 0.3s;
-}
+  font-weight: 400 !important;
+} */
 
 .navbar-btn {
   box-shadow: none;
@@ -28,12 +14,12 @@ a:focus {
   border: none;
 }
 
-.line {
+/* .line {
   width: 100%;
   height: 1px;
   border-bottom: 1px dashed #ddd;
   margin: 40px 0;
-}
+} */
 
 /* ---------------------------------------------------
     SIDEBAR STYLE
@@ -45,10 +31,9 @@ a:focus {
 }
 
 #sidebar {
-  min-width: 275px;
-  max-width: 275px;
-  background: #f6f6f6;
-  /* color: black; */
+  min-width: 245px;
+  max-width: 245px;
+  background: #eee;
   transition: all 0.6s cubic-bezier(0.945, 0.02, 0.27, 0.665);
   transform-origin: bottom left;
 }
@@ -60,12 +45,11 @@ a:focus {
 
 #sidebar .sidebar-header {
   padding: 20px;
-  background: #f6f6f6;
+  background: #eee;
 }
 
 #sidebar ul.components {
-  /* padding: 10px 0; */
-  border-bottom: 1px solid #47748b;
+  border-bottom: 1px solid #eee;
 }
 
 #sidebar ul p {
@@ -74,25 +58,25 @@ a:focus {
 }
 
 #sidebar ul li a {
-  padding: 20px;
-  font-size: 1.5em;
+  padding: 15px;
+  font-size: 1.2em;
   display: block;
   color: black;
 }
 #sidebar ul li a:hover {
-  color: white;
-  background: #00a1e5;
+  color: white !important;
+  background: #01b3ff;
   text-decoration: none;
 }
 
 #sidebar ul li.active > a,
 a[aria-expanded='true'] {
   color: black;
-  background: #f6f6f6;
+  background: #eee;
 }
 #sidebar ul li.active a:hover {
   color: white;
-  background: #00a1e5;
+  background: #01b3ff;
   text-decoration: none;
 }
 
@@ -100,29 +84,11 @@ a[data-toggle='collapse'] {
   position: relative;
 }
 
-a[aria-expanded='false']::before,
-a[aria-expanded='true']::before {
-  content: '\e259';
-  display: block;
-  position: absolute;
-  right: 90px;
-  bottom: 26px;
-  font-family: 'Glyphicons Halflings';
-  font-size: 0.6em;
-}
-a[aria-expanded='true']::before {
-  content: '\e260';
-}
-
 ul ul a {
-  font-size: 1.3em !important;
+  font-size: 1em !important;
   padding-left: 30px !important;
   /* background: ; */
 }
-
-/* ul ul a:hover {
-    background: grey;
-} */
 
 ul.CTAs {
   padding: 10px;
@@ -151,15 +117,43 @@ a.article:hover {
     CONTENT STYLE
 ----------------------------------------------------- */
 #content {
-  padding: 20px;
+  padding-top: 18px;
+  margin-left: -20px;
   min-height: 100vh;
   transition: all 0.3s;
+}
+
+#homeSubmenu {
+  border-bottom: 1px solid lightgray;
+}
+
+#homeSubmenu li a {
+  font-weight: 300 !important;
+  border: none;
+  font-size: 14px !important;
+  margin-left: 20px;
+  width: 100%;
+}
+
+#homeSubmenu li a:hover {
+  background: rgba(0, 0, 0, 0.1) !important;
+  color: black !important;
 }
 
 #sidebarCollapse {
   width: 40px;
   height: 40px;
   background: #f5f5f5;
+  position: relative;
+  left: 40px;
+}
+
+.list-unstyled li a {
+  border-bottom: 1px solid lightgray;
+  width: 110%;
+  padding-left: 35px !important;
+  position: relative;
+  right: 23px;
 }
 
 #sidebarCollapse span {
@@ -187,37 +181,3 @@ a.article:hover {
   opacity: 1;
   margin: 5px auto;
 }
-
-/* ---------------------------------------------------
-    MEDIAQUERIES
------------------------------------------------------ */
-/* @media (max-width: 768px) {
-    #sidebar {
-        margin-left: -250px;
-        transform: rotateY(90deg);
-    }
-    #sidebar.active {
-        margin-left: 0;
-        transform: none;
-    }
-    #sidebarCollapse span:first-of-type,
-    #sidebarCollapse span:nth-of-type(2),
-    #sidebarCollapse span:last-of-type {
-        transform: none;
-        opacity: 1;
-        margin: 5px auto;
-    }
-    #sidebarCollapse.active span {
-        margin: 0 auto;
-    }
-    #sidebarCollapse.active span:first-of-type {
-        transform: rotate(45deg) translate(2px, 2px);
-    }
-    #sidebarCollapse.active span:nth-of-type(2) {
-        opacity: 0;
-    }
-    #sidebarCollapse.active span:last-of-type {
-        transform: rotate(-45deg) translate(1px, -1px);
-    }
-
-} */

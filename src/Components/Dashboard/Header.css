@@ -99,10 +99,14 @@
 
 .profile-div:hover {
   cursor: pointer;
-  opacity: 0.5;
+  /* opacity: 0.5; */
 }
-
-
+.modal-title{
+  position: absolute;
+  left: 50px;
+  top: 0px;
+  font-size: 20px;
+}
 
 .modal-input-box {
   width: 350px;
@@ -121,7 +125,18 @@
 
  .envelope-icon {
    position: relative;
-   top: 7px;
+   top: 5px;
+   font-size: 20px;
  }
 
+ .dropdown-title {
+  /* position: absolute; */
+ background-color: rgb(192, 192, 192) !important;
+  padding: 12px 16px;
+ }
+ .dropdown-title a:hover{
+   text-decoration: none !important;
+   color: none;
+ };
+ 
  

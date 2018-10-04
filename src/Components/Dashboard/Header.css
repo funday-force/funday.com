@@ -99,4 +99,29 @@
 
 .profile-div:hover {
   cursor: pointer;
+  opacity: 0.5;
 }
+
+
+
+.modal-input-box {
+  width: 350px;
+ }
+
+ .modal-h6 {
+   position: relative;
+   left: 16px;
+   top: 10px;
+ }
+
+ .invite-buttn {
+   background-color: #00a1e5;
+   border-radius: 20%;
+ }
+
+ .envelope-icon {
+   position: relative;
+   top: 7px;
+ }
+
+ 

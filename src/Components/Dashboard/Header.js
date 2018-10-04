@@ -67,8 +67,13 @@ class Header extends React.Component {
                 </div>
               </div>
             </span>
-            <div className="btn dropdown-toggle profile-div">
-            
+            <div className="btn profile-div" id="menu1" type="button" data-toggle="dropdown">
+              <ul className="dropdown-list dropdown-menu" role="menu" aria-labelledby="menu1">
+                <div className="dropdown-title">
+                  <li role="presentation"><a role="menuitem" href="/profile">Profile</a></li>
+                  <li role="presentation"><a role="menuitem" href="/homepage">Log Out</a></li>
+                </div>
+              </ul>
               <img
                 src={this.state.user.picture}
                 alt="profile pic"

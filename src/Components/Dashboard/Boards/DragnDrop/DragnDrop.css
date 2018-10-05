@@ -1,0 +1,6 @@
+.boards-container {
+  position: absolute;
+  top: 200px;
+  left: 300px;
+  width: 75%;
+}

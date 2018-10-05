@@ -52,17 +52,17 @@ class navbar extends React.Component {
               </li>
               <ul className="collapse list-unstyled" id="homeSubmenu">
                 <li>
-                  <a href="#">Boards1</a>
+                  <Link to="/dashboard/boards">Boards1</Link>
                 </li>
                 <li>
-                  <a href="#">Boards2</a>
+                  <Link to="/dashboard/boards">Boards2</Link>
                 </li>
                 <li>
-                  <a href="#">Boards3</a>
+                  <Link to="/dashboard/boards">Boards3</Link>
                 </li>
               </ul>
               <li>
-                <a href="#">Team</a>
+                <Link to="/dashboard/teams">Team</Link>
               </li>
             </ul>
           </nav>

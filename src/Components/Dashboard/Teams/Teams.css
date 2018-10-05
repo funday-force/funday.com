@@ -1,0 +1,10 @@
+.team-div {
+  position: absolute;
+  display: block;
+  right: 0;
+  bottom: 0;
+  top: 25%;
+  left: 25%;
+  background-color: #ffffff;
+  width: 70%;
+}

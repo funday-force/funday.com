@@ -1,6 +1,7 @@
 import React from 'react';
 import './side_navbar.css';
 import $ from 'jquery';
+import { Link } from 'react-router-dom';
 
 class navbar extends React.Component {
   constructor(props) {
@@ -24,10 +25,11 @@ class navbar extends React.Component {
           <nav id="sidebar">
             <ul className="list-unstyled components">
               <li className="active">
-                <a href="#">Inbox</a>
+                <Link to="/dashboard">Inbox</Link>
               </li>
+
               <li>
-                <a href="#">Calendar</a>
+                <Link to="/dashboard/calendar">Calendar</Link>
               </li>
 
               <li>
@@ -50,17 +52,17 @@ class navbar extends React.Component {
               </li>
               <ul className="collapse list-unstyled" id="homeSubmenu">
                 <li>
-                  <a href="#">Boards1</a>
+                  <Link to="/dashboard/boards">Boards1</Link>
                 </li>
                 <li>
-                  <a href="#">Boards2</a>
+                  <Link to="/dashboard/boards">Boards2</Link>
                 </li>
                 <li>
-                  <a href="#">Boards3</a>
+                  <Link to="/dashboard/boards">Boards3</Link>
                 </li>
               </ul>
               <li>
-                <a href="#">Team</a>
+                <Link to="/dashboard/teams">Team</Link>
               </li>
             </ul>
           </nav>

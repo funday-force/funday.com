@@ -1,0 +1,54 @@
+#inbox {
+  position: absolute;
+  display: block;
+  right: 0;
+  bottom: 0;
+  top: 25%;
+  left: 25%;
+  background-color: #ffffff;
+  width: 70%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.new-message-btn {
+  border-radius: 50px;
+  position: absolute;
+  top: 90px;
+  right: 245px;
+}
+
+.inbox-title {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.inbox-hero {
+  position: absolute;
+  top: 100px;
+  left: 30%;
+  text-align: center;
+  font-size: 14px;
+}
+
+.inbox-hero h4 {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.inbox-hero p {
+  margin: 0;
+}
+
+.message-count {
+  float: right;
+  position: relative;
+  left: 100px;
+  bottom: 35px;
+  font-size: 0.9rem;
+}

@@ -1,8 +1,75 @@
+.calendar-search {
+  border-radius: 50px;
+  margin-left: 20px;
+  height: 30px;
+  font-size: 15px;
+  width: 270px;
+  position: relative;
+  top: -1px;
+  padding: 3px 0px 3px 12px;
+  background-color: #fff !important;
+  border: 1px solid #c4c4c4;
+  position: absolute;
+  top: -56px;
+  left: 60px;
+}
+
+.inbox-span {
+  border-right: 1px solid rgb(190, 190, 190);
+  padding-right: 10px;
+}
+
+.calendar-right {
+  position: absolute;
+  top: -56px;
+  right: 60px;
+}
+
+.calendar-right:hover,
+.calendar-right i:hover,
+.calendar-right span:hover {
+  cursor: pointer;
+  color: #66ccf5;
+}
+
+.calendar-right i {
+  font-size: 20px;
+  padding-right: 10px;
+  color: rgb(128, 128, 128);
+}
+
+.calendar-right span {
+  font-size: 18px;
+  font-weight: lighter;
+  display: inline-block;
+  margin-right: 10px;
+  color: rgb(128, 128, 128);
+}
+
+.calendar-right span:first-child {
+  border-right: 1px solid black;
+}
+
+.calendar-search:focus {
+  outline: none !important;
+  border: 1px solid #66ccf5;
+}
+
+.calendar-container {
+  width: 80.5%;
+  height: calc(100vh - 150px);
+  position: absolute;
+  top: 150px;
+  left: 248px;
+  z-index: 5;
+}
+
 .react-calendar {
   background: #1d1e3d;
   color: rgb(160, 160, 160);
-  font-family: "Roboto", helvetica, arial, sans-serif;
+  font-family: 'Roboto', helvetica, arial, sans-serif;
   width: 100%;
+  height: auto;
 }
 
 .react-calendar button {
@@ -15,11 +82,11 @@
   height: 50px;
   display: flex;
   justify-content: flex-end;
-  font-family: "Roboto", helvetica, arial, sans-serif;
+  font-family: 'Roboto', helvetica, arial, sans-serif;
   font-size: 80%;
   padding-top: 0px;
   padding-right: 2px;
-  padding-bottom: 100px;
+  padding-bottom: 69.6px;
   border: 0.5px solid #454662 !important;
 }
 
@@ -29,6 +96,7 @@
   padding-bottom: 5px;
   font-size: 80%;
   padding-top: 5px;
+  text-align: center;
 }
 
 button.react-calendar__tile:enabled:hover,

@@ -1,21 +1,19 @@
-import React from "react";
-import logo from "../../images/headerlogo.png";
-import "./Header.css";
-import axios from "axios";
+import React from 'react';
+import logo from '../../images/headerlogo.png';
+import './Header.css';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
-
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      user: {},
-
+      user: {}
     };
   }
   componentDidMount() {
-    axios.get("/api/user-data").then(res => {
+    axios.get('/api/user-data').then(res => {
       console.log(res.data);
       this.setState({
         user: res.data
@@ -32,7 +30,7 @@ class Header extends React.Component {
           <Link to="/dashboard">
             <i className="fa fa-bell bell-icon" />
           </Link>
-          <Link to='/team'>
+          <Link to="/dashboard/teams">
             <i className="fa fa-users users-icon" />
           </Link>
           <i className="fa fa-search search-icon" />
@@ -45,41 +43,53 @@ class Header extends React.Component {
           <div className="header-right float-right">
             <span className="invite-span">
               <i className="fa fa-plus-square" />
-              <span type="button" className="invite" data-toggle="modal" data-target="#exampleModalCenter">Invite Team Members</span>
-              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <i className="fa fa-envelope envelope-icon"></i>
-                      <h5 class="modal-title" id="exampleModalLongTitle">Invite Team Member</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span
+                className="invite"
+                data-toggle="modal"
+                data-target="#exampleModalCenter"
+              >
+                Invite Team Members
+              </span>
+              <div className="modal fade" id="exampleModalCenter" role="dialog">
+                <div
+                  className="modal-dialog modal-dialog-centered"
+                  role="document"
+                >
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <i className="fa fa-envelope envelope-icon" />
+                      <h5 className="modal-title" id="exampleModalLongTitle">
+                        Invite Team Member
+                      </h5>
+                      <button className="close" data-dismiss="modal">
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
                     <h6 className="modal-h6">Enter one email address:</h6>
-                    <div class="modal-body">
+                    <div className="modal-body">
                       <input type="text" className="modal-input-box" />
                     </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary invite-buttn" data-dismiss="modal">Invite</button>
+                    <div className="modal-footer">
+                      <button
+                        className="btn btn-secondary invite-buttn"
+                        data-dismiss="modal"
+                      >
+                        Invite
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
             </span>
-            <div className="btn profile-div" id="menu1" type="button" data-toggle="dropdown">
-              <ul className="dropdown-list dropdown-menu" role="menu" aria-labelledby="menu1">
-                <div className="dropdown-title">
-                  <li role="presentation"><a role="menuitem" href="/profile">Profile</a></li>
-                  <li role="presentation"><a role="menuitem" href="/homepage">Log Out</a></li>
-                </div>
-              </ul>
-              <img
-                src={this.state.user.picture}
-                alt="profile pic"
-                className="img-fluid profile-img"
-              />
-              <i className="fa fa-arrow-circle-down" />
+            <div className="btn profile-div">
+              <Link to="/dashboard/profile">
+                <img
+                  src={this.state.user.picture}
+                  alt="profile pic"
+                  className="img-fluid profile-img"
+                />
+                <i className="fa fa-arrow-circle-down" />
+              </Link>
             </div>
           </div>
         </header>

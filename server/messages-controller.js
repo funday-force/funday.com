@@ -11,10 +11,10 @@ module.exports = {
 
   createMessage: (req, res) => {
     const db = req.app.get('db');
+    const team_id = 1;
+    const { user_id, message, date } = req.body;
 
-    const { message } = req.body;
-
-    db.create_message([message])
+    db.create_message([team_id, user_id, message, date])
       .then(resp => {
         res.status(200).send(resp);
       })

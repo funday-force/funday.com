@@ -87,56 +87,52 @@
   margin-left: 15px;
   padding-left: 15px;
   position: relative;
-  top: -5px;
+  top: -10px;
 }
 
 .profile-div i {
   font-size: 18px;
   position: relative;
-  color: rgb(59, 59, 59);
+  color: #444;
   top: 3px;
 }
 
 .profile-div:hover {
   cursor: pointer;
-  /* opacity: 0.5; */
-}
-.modal-title{
-  position: absolute;
-  left: 50px;
-  top: 0px;
-  font-size: 20px;
 }
 
 .modal-input-box {
-  width: 350px;
- }
+  width: 100%;
+}
 
- .modal-h6 {
-   position: relative;
-   left: 16px;
-   top: 10px;
- }
+.modal-h6 {
+  position: relative;
+  left: 16px;
+  top: 10px;
+}
 
- .invite-buttn {
-   background-color: #00a1e5;
-   border-radius: 20%;
- }
+.drop-line {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  width: 100%;
+  position: relative;
+  right: 15px;
+}
 
- .envelope-icon {
-   position: relative;
-   top: 5px;
-   font-size: 20px;
- }
+.invite-buttn {
+  background-color: #00a1e5;
+}
 
- .dropdown-title {
-  /* position: absolute; */
- background-color: rgb(192, 192, 192) !important;
+.envelope-icon {
+  position: relative;
+  top: 5px;
+  font-size: 20px;
+}
+
+.dropdown-title {
+  background-color: rgb(255, 255, 255) !important;
   padding: 12px 16px;
- }
- .dropdown-title a:hover{
-   text-decoration: none !important;
-   color: none;
- };
- 
- 
+}
+.dropdown-title a:hover {
+  text-decoration: none !important;
+  color: none;
+}

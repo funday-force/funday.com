@@ -8,6 +8,7 @@ const axios = require("axios");
 const userCtrl = require("./users-controller");
 const teamCtrl = require("./team-controller");
 const messagesCtrl = require("./messages-controller");
+const boardsCtrl = require("./boards-controller");
 
 // Init epxress app
 const app = express();
@@ -147,5 +148,14 @@ app.delete("/api/messages/:id", messagesCtrl.deleteMessage);
 
 app.put("/api/messages/:id", messagesCtrl.updateMessage);
 
-// Listen on a port
+// BOARDS ENDPOINTS
+app.get("/api/boards", boardsCtrl.getBoards);
+
+app.post("/api/boards", boardsCtrl.createBoard);
+
+app.delete("/api/boards/:id", boardsCtrl.deleteBoard);
+
+app.put("/api/boards/:id", boardsCtrl.updateBoard);
+
+// LISTEN ON PORT
 app.listen(SERVER_PORT, () => console.log(`Listening on port: ${SERVER_PORT}`));

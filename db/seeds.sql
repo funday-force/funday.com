@@ -83,7 +83,7 @@ create table boards
     board_id serial primary key,
     team_id integer references teams(team_id),
     title text,
-    desc text
+    description text
 )
 
 -- TABLES

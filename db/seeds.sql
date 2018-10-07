@@ -75,10 +75,39 @@ join teams t
 on t.team_id = m.team_id;
 
 -- BOARDS
+
 drop table if exists boards;
 
 create table boards
 (
     board_id serial primary key,
-    team_id references
+    team_id integer references teams(team_id),
+    title text,
+    desc text
+)
+
+-- TABLES
+
+drop table if exists tables;
+
+create table tables
+(
+    table_id serial primary key,
+    title text,
+    board_id integer references boards(board_id)
+)
+
+-- ROWS
+
+drop table if exists rows;
+
+create table rows
+(
+    row_id serial primary key,
+    table_id integer references tables(table_id),
+    title text,
+    status text,
+    text text,
+    date text,
+    person text
 )

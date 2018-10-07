@@ -9,6 +9,7 @@ const userCtrl = require("./users-controller");
 const teamCtrl = require("./team-controller");
 const messagesCtrl = require("./messages-controller");
 const boardsCtrl = require("./boards-controller");
+const tablesCtrl = require("./tables-controller");
 
 // Init epxress app
 const app = express();
@@ -156,6 +157,15 @@ app.post("/api/boards", boardsCtrl.createBoard);
 app.delete("/api/boards/:id", boardsCtrl.deleteBoard);
 
 app.put("/api/boards/:id", boardsCtrl.updateBoard);
+
+// TABLES ENDPOINTS
+app.get("/api/tables", tablesCtrl.getTables);
+
+app.post("/api/tables", tablesCtrl.createTable);
+
+app.delete("/api/tables/:id", tablesCtrl.deleteTable);
+
+app.put("/api/tables/:id", tablesCtrl.updateTable);
 
 // LISTEN ON PORT
 app.listen(SERVER_PORT, () => console.log(`Listening on port: ${SERVER_PORT}`));

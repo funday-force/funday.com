@@ -86,6 +86,7 @@ create table boards
     description text
 )
 
+
 -- TABLES
 
 drop table if exists tables;
@@ -111,3 +112,8 @@ create table rows
     date text,
     person text
 )
+
+insert into rows
+(table_id, title, status, text, date, person)
+values
+(1, 'whatever', 'done', 'add header', 'Oct 8 2018', 'Hunter')

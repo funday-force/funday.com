@@ -1,10 +1,114 @@
 .team-div {
   position: absolute;
-  display: block;
   right: 0;
   bottom: 0;
   top: 25%;
   left: 25%;
   background-color: #ffffff;
-  width: 70%;
+  overflow: scroll;
+}
+
+.team-top {
+  position: fixed;
+  top: 100px;
+}
+
+.spacer {
+  width: 100%;
+  height: 50px;
+}
+.team-div img {
+  margin-bottom: 10px;
+}
+
+.team-div span {
+  font-size: 28px;
+}
+
+.team-search-div {
+  float: right;
+  position: relative;
+  top: 18px;
+  left: 280px;
+}
+
+.team-search-div input {
+  width: 200px !important;
+}
+
+.team-search-icon {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  z-index: 5;
+  color: rgb(172, 172, 172);
+}
+
+.team-search-bars {
+  float: right;
+  position: relative;
+  top: 20px;
+  left: 540px;
+  color: rgb(107, 107, 107);
+  font-size: 24px;
+}
+
+.team-search-bars:hover {
+  cursor: pointer;
+}
+
+.mapped {
+  margin-top: 10px;
+  position: relative;
+}
+
+.team-mapped {
+  margin-top: 10px;
+  margin-right: 60px;
+  border-bottom: 0.5px solid gray;
+  padding-bottom: 10px;
+}
+
+.team-mapped img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.team-mapped .name {
+  margin-left: 10px;
+  font-size: 16px;
+  color: rgb(0, 140, 255);
+  position: relative;
+  bottom: 5px;
+}
+
+.team-right .email {
+  font-size: 16px;
+}
+
+.team-right {
+  float: right;
+}
+
+.team-right .mail-icon {
+  margin-left: 80px;
+  font-size: 16px;
+  color: rgb(0, 140, 255);
+  padding: 10px 12px;
+  border: 0.5px solid rgb(206, 206, 206);
+  border-radius: 50%;
+}
+
+.team-right .location-icon {
+  margin-left: 70px;
+  font-size: 18px;
+  color: rgb(0, 140, 255);
+  padding: 9px 15px;
+  border: 0.5px solid rgb(206, 206, 206);
+  border-radius: 50%;
+}
+
+.team-right .teams-name span {
+  margin-left: 70px;
+  font-size: 14px;
 }

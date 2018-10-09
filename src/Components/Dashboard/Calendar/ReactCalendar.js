@@ -44,6 +44,11 @@ export default class ReactCalendar extends Component {
             value={this.state.date}
             onClick={value => alert('New date is: ', value)}
             tileClassName={'days'}
+            tileContent={({ date, view }) =>
+              view === 'month' && date.getDay() === 0 ? (
+                <p>It's Sunday!</p>
+              ) : null
+            }
           />
         </div>
       </div>

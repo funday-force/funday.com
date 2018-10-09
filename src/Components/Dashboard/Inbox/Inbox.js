@@ -84,7 +84,7 @@ export default class Inbox extends Component {
           <i className="fa fa-plus pr-2" />
           New Message
         </button>
-        <div id="inbox" className="container bg-light">
+        <div id="inbox" className="container">
           <div className="row">
             <div className="col-md-8 mr-auto">
               <h2 className="inbox-title">Inbox</h2>

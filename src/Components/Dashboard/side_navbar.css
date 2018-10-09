@@ -28,6 +28,12 @@ a:hover {
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
+
+.funday-nav {
+  position: fixed;
+  margin-top: 70px;
+}
+
 .wrapper {
   display: flex;
   align-items: stretch;
@@ -185,4 +191,27 @@ a.article:hover {
   transform: none;
   opacity: 1;
   margin: 5px auto;
+}
+
+.new-board-btn {
+  position: relative;
+  left: 170px;
+  margin: 5px;
+  border: none;
+  background: transparent;
+}
+
+.new-board-btn:hover {
+  cursor: pointer;
+  border: 1px solid lightgray;
+  border-radius: 30px;
+  background: white;
+  z-index: 500;
+}
+
+.new-board-btn i {
+  color: #01b3ff;
+  border-radius: 20px;
+  padding: 3px;
+  font-size: 15px;
 }

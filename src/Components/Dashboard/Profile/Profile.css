@@ -8,3 +8,160 @@
   background-color: #ffffff;
   width: 70%;
 }
+
+.img-username-container {
+  position: absolute;
+  display: block;
+  right: 0;
+  bottom: 0;
+  top: 8.5%;
+  left: 17%;
+  background-color: #0fa2e2;
+  text-align: center;
+  padding-top: 70px;
+  height: 300px;
+  color: #fff;
+  /* width: 0%; */
+}
+
+.profile-header-img {
+  border-radius: 50%;
+  height: 136px;
+  width: 136px;
+}
+
+.user-name {
+  padding-top: 15px;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.overview-container {
+  position: absolute;
+  display: block;
+  left: 42%;
+  top: 51%;
+  font-weight: 300;
+  line-height: 2;
+  box-sizing: border-box;
+}
+
+.overview {
+  position: relative;
+  right: 6%;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.fa-user {
+  position: relative;
+  color: #4cc0ee;
+  left: 12.5px;
+  top: 4px;
+  font-size: 18px;
+}
+
+.user-icon {
+  border: 1px solid #4cc0ee;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: relative;
+  right: 15px;
+  bottom: 5px;
+}
+
+.title {
+  display: flex;
+}
+
+.user-title-span {
+  color: #0086c3;
+  position: relative;
+  left: 10px;
+}
+
+.fa-envelope {
+  position: relative;
+  color: #4cc0ee;
+  left: 11px;
+  top: 2px;
+  font-size: 16px;
+}
+
+.email-icon {
+  border: 1px solid #4cc0ee;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: relative;
+  right: 15px;
+  bottom: 5px;
+}
+
+.email {
+  display: flex;
+}
+
+.user-email-span {
+  color: #0086c3;
+  position: relative;
+  left: 10px;
+}
+
+.fa-phone {
+  position: relative;
+  color: #4cc0ee;
+  left: 11px;
+  top: 6px;
+  font-size: 22px;
+}
+
+.phone-icon {
+  border: 1px solid #4cc0ee;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: relative;
+  right: 15px;
+  bottom: 5px;
+}
+
+.phone {
+  display: flex;
+}
+
+.user-phone-span {
+  color: #0086c3;
+  position: relative;
+  left: 10px;
+}
+
+.fa-map-marker {
+  position: relative;
+  color: #4cc0ee;
+  left: 13px;
+  top: 6px;
+  font-size: 22px;
+}
+
+.location-icon {
+  border: 1px solid #4cc0ee;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: relative;
+  right: 15px;
+  bottom: 5px;
+  background: #fff;
+}
+
+.location {
+  display: flex;
+}
+
+.user-location-span {
+  color: #0086c3;
+  position: relative;
+  left: 10px;
+}

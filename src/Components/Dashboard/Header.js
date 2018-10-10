@@ -1,8 +1,8 @@
-import React from 'react';
-import logo from '../../images/headerlogo.png';
-import './Header.css';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import React from "react";
+import logo from "../../images/headerlogo.png";
+import "./Header.css";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 class Header extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class Header extends React.Component {
     };
   }
   componentDidMount() {
-    axios.get('/api/user-data').then(res => {
+    axios.get("/api/user-data").then(res => {
       console.log(res.data);
       this.setState({
         user: res.data

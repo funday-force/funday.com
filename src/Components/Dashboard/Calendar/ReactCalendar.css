@@ -67,7 +67,7 @@
 .react-calendar {
   background: #1d1e3d;
   color: rgb(160, 160, 160);
-  font-family: 'Roboto', helvetica, arial, sans-serif;
+  font-family: "Roboto", helvetica, arial, sans-serif;
   width: 100%;
   height: auto;
 }
@@ -82,7 +82,7 @@
   height: 50px;
   display: flex;
   justify-content: flex-end;
-  font-family: 'Roboto', helvetica, arial, sans-serif;
+  font-family: "Roboto", helvetica, arial, sans-serif;
   font-size: 80%;
   padding-top: 0px;
   padding-right: 2px;
@@ -118,4 +118,16 @@ button.react-calendar__tile--active:enabled:focus {
   color: #dddddd !important;
   border: none;
   padding: 10px;
+}
+
+button.react-calendar__tile
+  react-calendar__tile--now
+  react-calendar__tile--active
+  react-calendar__tile--rangeStart
+  react-calendar__tile--rangeEnd
+  react-calendar__tile--rangeBothEnds
+  react-calendar__month-view__days__day
+  days {
+  color: white;
+  font-weight: 500;
 }

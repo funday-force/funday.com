@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import Calendar from 'react-calendar/dist/entry.nostyle';
-import Navbar from '../side-navbar.js';
-import Header from '../Header.js';
-import './ReactCalendar.css';
+import React, { Component } from "react";
+import Calendar from "react-calendar/dist/entry.nostyle";
+import Navbar from "../side-navbar.js";
+import Header from "../Header.js";
+import "./ReactCalendar.css";
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default class ReactCalendar extends Component {
   constructor() {
@@ -42,8 +42,8 @@ export default class ReactCalendar extends Component {
           <Calendar
             onChange={this.onChange}
             value={this.state.date}
-            onClick={value => alert('New date is: ', value)}
-            tileClassName={'days'}
+            onClick={value => alert("New date is: ", value)}
+            tileClassName={"days"}
           />
         </div>
       </div>

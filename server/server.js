@@ -3,12 +3,13 @@ const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const massive = require('massive');
-const axios = require('axios');
-
+const authCtrl = require('./auth-controller');
 const userCtrl = require('./users-controller');
 const teamCtrl = require('./team-controller');
 const messagesCtrl = require('./messages-controller');
-const authCtrl = require('./auth-controller');
+const boardsCtrl = require('./boards-controller');
+const tablesCtrl = require('./tables-controller');
+const rowsCtrl = require('./rows-controller');
 
 // Init epxress app
 const app = express();
@@ -76,5 +77,32 @@ app.delete('/api/messages/:id', messagesCtrl.deleteMessage);
 
 app.put('/api/messages/:id', messagesCtrl.updateMessage);
 
-// Listen on a port
+// BOARDS ENDPOINTS
+app.get('/api/boards', boardsCtrl.getBoards);
+
+app.post('/api/boards', boardsCtrl.createBoard);
+
+app.delete('/api/boards/:id', boardsCtrl.deleteBoard);
+
+app.put('/api/boards/:id', boardsCtrl.updateBoard);
+
+// TABLES ENDPOINTS
+app.get('/api/tables', tablesCtrl.getTables);
+
+app.post('/api/tables', tablesCtrl.createTable);
+
+app.delete('/api/tables/:id', tablesCtrl.deleteTable);
+
+app.put('/api/tables/:id', tablesCtrl.updateTable);
+
+// ROWS ENDPOINTS
+app.get('/api/rows', rowsCtrl.getRows);
+
+app.post('/api/rows', rowsCtrl.createRow);
+
+app.delete('/api/rows/:id', rowsCtrl.deleteRow);
+
+app.put('/api/rows/:id', rowsCtrl.updateRow);
+
+// LISTEN ON PORT
 app.listen(SERVER_PORT, () => console.log(`Listening on port: ${SERVER_PORT}`));

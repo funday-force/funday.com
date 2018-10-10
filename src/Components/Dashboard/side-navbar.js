@@ -60,13 +60,6 @@ class navbar extends React.Component {
                 <li>
                   <Link to="/dashboard/boards">Boards3</Link>
                 </li>
-                <button
-                  className="new-board-btn"
-                  data-toggle="modal"
-                  data-target="#boardModal"
-                >
-                  <i className="fa fa-plus" /> New
-                </button>
               </ul>
               <li>
                 <Link to="/dashboard/teams">Team</Link>

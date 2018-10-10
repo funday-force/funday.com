@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Inbox.css';
 import axios from 'axios';
-import Messages from './Messages';
+import Message from './Message';
 
 export default class Inbox extends Component {
   constructor(props) {
@@ -14,6 +14,7 @@ export default class Inbox extends Component {
     };
 
     this.deleteMessage = this.deleteMessage.bind(this);
+    this.updateMessage = this.updateMessage.bind(this);
   }
 
   handleInput(val) {
@@ -47,8 +48,7 @@ export default class Inbox extends Component {
     axios.post('/api/messages', { user_id, message, date }).then(res => {
       console.log(res.data);
       this.setState({
-        messages: res.data,
-        message: ''
+        messages: res.data
       });
     });
   }
@@ -63,9 +63,7 @@ export default class Inbox extends Component {
     });
   }
 
-  updateMessage(id) {
-    const { message } = this.state;
-
+  updateMessage(id, message) {
     axios.put(`/api/messages/${id}`, { message }).then(res => {
       this.setState({
         messages: res.data
@@ -74,6 +72,19 @@ export default class Inbox extends Component {
   }
 
   render() {
+    let mappedMessages = this.state.messages.map((message, i) => {
+      console.log(message);
+      return (
+        <Message
+          key={message.message_id}
+          message={message}
+          id={message.message_id}
+          deleteMessage={this.deleteMessage}
+          user={this.state.user}
+          updateMessage={this.updateMessage}
+        />
+      );
+    });
     return (
       <div>
         <button
@@ -97,12 +108,7 @@ export default class Inbox extends Component {
               </div>
 
               {this.state.messages.length !== 0 ? (
-                <Messages
-                  deleteMessage={this.deleteMessage}
-                  user={this.state.user}
-                  messages={this.state.messages}
-                  updateMessage={this.updateMessage}
-                />
+                mappedMessages
               ) : (
                 <div className="inbox-hero">
                   <img

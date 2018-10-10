@@ -10,8 +10,22 @@ export default class ReactCalendar extends Component {
   constructor() {
     super();
     this.state = {
-      date: new Date()
+      date: new Date(),
+      input: ''
     };
+  }
+
+  promptInput() {
+    var person = prompt('Please enter a todo:');
+    this.setState({
+      input: person
+    });
+  }
+
+  handleInput(val) {
+    this.setState({
+      input: val
+    });
   }
 
   onChange = date => this.setState({ date });
@@ -34,7 +48,7 @@ export default class ReactCalendar extends Component {
               <i class="fa fa-envelope" />
               <span className="inbox-span">Inbox</span>
             </Link>
-            <Link to="/team">
+            <Link to="/dashboard/teams">
               <i class="fa fa-users" />
               <span>Team</span>
             </Link>
@@ -42,13 +56,11 @@ export default class ReactCalendar extends Component {
           <Calendar
             onChange={this.onChange}
             value={this.state.date}
-            onClick={value => alert('New date is: ', value)}
-            tileClassName={'days'}
             tileContent={({ date, view }) =>
-              view === 'month' && date.getDay() === 0 ? (
-                <p>It's Sunday!</p>
-              ) : null
+              view === 'month' && date.getDay() === 0 ? this.state.input : null
             }
+            tileClassName={'days'}
+            onClickDay={() => this.promptInput()}
           />
         </div>
       </div>

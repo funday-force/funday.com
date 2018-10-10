@@ -29,6 +29,10 @@ a:hover {
     SIDEBAR STYLE
 ----------------------------------------------------- */
 
+#boardModal {
+  z-index: 9999 !important;
+}
+
 .funday-nav {
   position: fixed;
   margin-top: 70px;

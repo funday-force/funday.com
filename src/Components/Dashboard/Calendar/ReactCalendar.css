@@ -119,3 +119,7 @@ button.react-calendar__tile--active:enabled:focus {
   border: none;
   padding: 10px;
 }
+
+/* .react-calendar__tile {
+  height: 60px;
+} */

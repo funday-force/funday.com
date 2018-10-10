@@ -14,7 +14,6 @@ class Header extends React.Component {
   }
   componentDidMount() {
     axios.get('/api/user-data').then(res => {
-      console.log(res.data);
       this.setState({
         user: res.data
       });
@@ -22,7 +21,7 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="header-nav">
         <nav className="navbar header-bar">
           <img className="header-logo" src={logo} alt="headerlogo" />
         </nav>
@@ -46,40 +45,10 @@ class Header extends React.Component {
               <span
                 className="invite"
                 data-toggle="modal"
-                data-target="#exampleModalCenter"
+                data-target="#addMemberModal"
               >
                 Invite Team Members
               </span>
-              <div className="modal fade" id="exampleModalCenter" role="dialog">
-                <div
-                  className="modal-dialog modal-dialog-centered"
-                  role="document"
-                >
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <i className="fa fa-envelope envelope-icon" />
-                      <h5 className="modal-title" id="exampleModalLongTitle">
-                        Invite Team Member
-                      </h5>
-                      <button className="close" data-dismiss="modal">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <h6 className="modal-h6">Enter one email address:</h6>
-                    <div className="modal-body">
-                      <input type="text" className="modal-input-box" />
-                    </div>
-                    <div className="modal-footer">
-                      <button
-                        className="btn btn-secondary invite-buttn"
-                        data-dismiss="modal"
-                      >
-                        Invite
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </span>
             <div className="btn profile-div">
               <Link to="/dashboard/profile">
@@ -93,6 +62,37 @@ class Header extends React.Component {
             </div>
           </div>
         </header>
+
+        <div className="modal fade" id="addMemberModal" role="dialog">
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <i
+                  className="fa fa-user envelope-icon mr-2"
+                  style={{ fontSize: '20px' }}
+                />
+                <h5 className="modal-title" id="exampleModalLongTitle">
+                  Invite Team Member
+                </h5>
+                <button className="close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <h6 className="modal-h6">Enter one email address:</h6>
+              <div className="modal-body">
+                <input type="text" className="modal-input-box" />
+              </div>
+              <div className="modal-footer">
+                <button
+                  className="btn btn-secondary invite-buttn"
+                  data-dismiss="modal"
+                >
+                  Invite
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

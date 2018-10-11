@@ -3,6 +3,7 @@ import Header from '../Header';
 import Navbar from '../side-navbar';
 import axios from 'axios';
 import './Teams.css';
+import ReactTooltip from 'react-tooltip';
 
 import teamIcon from '../../../images/team-icon.png';
 
@@ -41,14 +42,17 @@ export default class Teams extends Component {
               <span className="name">{user.user_name}</span>
             </span>
             <div className="team-right">
-              <span className="email">{user.email}</span>
-              <span className="mail-icon">
-                <a href={`mailto:${user.email}`} target="_top">
-                  <i className="fa fa-envelope" />
-                </a>
-              </span>
-              <span className="location-icon">
+              <span className="email">{user.phone}</span>
+              <a
+                className="mail-icon"
+                href={`mailto:${user.email}`}
+                target="_top"
+              >
+                <i className="fa fa-envelope" />
+              </a>
+              <span className="location-icon" data-tip={user.location}>
                 <i className="fa fa-map-marker" />
+                <ReactTooltip />
               </span>
               <span className="teams-name">
                 <span>Teams: Funday Force</span>
@@ -75,12 +79,59 @@ export default class Teams extends Component {
                 placeholder="Search by name"
               />
             </div>
-            <i className="fa fa-bars team-search-bars" />
+
+            <i
+              className="fa fa-bars team-search-bars"
+              href="#"
+              role="button"
+              id="dropdownMenuLink"
+              data-toggle="dropdown"
+            />
+            <div class="dropdown-menu">
+              <span
+                class="dropdown-item"
+                data-toggle="modal"
+                data-target="#addMemberModal"
+              >
+                Invite Team Member
+              </span>
+            </div>
           </div>
 
           <div className="spacer" />
 
           <div className="mapped">{mappedTeam}</div>
+        </div>
+
+        <div className="modal fade" id="addMemberModal" role="dialog">
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <i
+                  className="fa fa-user envelope-icon mr-2"
+                  style={{ fontSize: '20px' }}
+                />
+                <h5 className="modal-title" id="exampleModalLongTitle">
+                  Invite Team Member
+                </h5>
+                <button className="close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <h6 className="modal-h6">Enter one email address:</h6>
+              <div className="modal-body">
+                <input type="text" className="modal-input-box" />
+              </div>
+              <div className="modal-footer">
+                <button
+                  className="btn btn-secondary invite-buttn"
+                  data-dismiss="modal"
+                >
+                  Invite
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );

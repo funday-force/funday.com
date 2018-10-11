@@ -75,38 +75,6 @@ class navbar extends React.Component {
             </button>
           </div>
         </div>
-
-        <div className="modal fade" id="boardModal" role="dialog">
-          <div className="modal-dialog modal-dialog-centered" role="document">
-            <div className="modal-content">
-              <div className="modal-header">
-                <i className="fa fa-bars envelope-icon mr-2" />
-                <h5 className="modal-title" id="exampleModalLongTitle">
-                  Add New Board
-                </h5>
-                <button className="close" data-dismiss="modal">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div className="modal-body">
-                <input
-                  type="text"
-                  className="modal-input-box"
-                  placeholder="New Board Name"
-                  style={{ padding: '5px' }}
-                />
-              </div>
-              <div className="modal-footer">
-                <button
-                  className="btn btn-secondary invite-buttn"
-                  data-dismiss="modal"
-                >
-                  Create Board
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     );
   }

@@ -1,6 +1,8 @@
 .header-bar {
   height: 85px;
   background-color: #eee !important;
+  position: fixed;
+  width: 100%;
 }
 
 .header-logo {

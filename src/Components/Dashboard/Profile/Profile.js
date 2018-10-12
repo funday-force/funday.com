@@ -9,7 +9,8 @@ export default class Profile extends Component {
     super();
 
     this.state = {
-      user: {}
+      user: {},
+      editing: false
     };
   }
 
@@ -37,40 +38,94 @@ export default class Profile extends Component {
             <p>{this.state.user.user_name}</p>
           </div>
         </div>
-
         <div className="overview-container">
           <span className="overview">
-            <p>Overview</p>
+            <p className="overview-text">Overview</p>
           </span>
           <div className="title">
             <div className="user-icon">
-              <i className="fa fa-user" />
+              <i className="fa fa-user user-i" />
             </div>
             <p>Title: </p>
-            <p>{this.state.user.title}</p>
+            <p
+              className="edit-title user-title"
+              data-toggle="modal"
+              data-target="#editProfile"
+            >
+              Hello
+              {this.state.user.title}
+            </p>
           </div>
-          <div className="email">
+          <div className="profile-email">
             <div className="email-icon">
-              <i class="fa fa-envelope" />
+              <i class="fa fa-envelope email-i" />
             </div>
             <p>Email: </p>
-            <span className="user-email-span">
-              <p>{this.state.user.email}</p>
-            </span>
+            <p
+              className="edit-email user-email"
+              data-toggle="modal"
+              data-target="#editProfile"
+            >
+              {this.state.user.email}
+            </p>
           </div>
           <div className="phone">
             <div className="phone-icon">
-              <i className="fa fa-phone" />
+              <i className="fa fa-phone phone-i" />
             </div>
             <p>Phone: </p>
-            <p>{this.state.user.phone}</p>
+            <p
+              className="edit-phone user-phone"
+              data-toggle="modal"
+              data-target="#editProfile"
+            >
+              555-555-5555
+              {this.state.user.phone}
+            </p>
           </div>
           <div className="location">
-            <div className="location-icon">
-              <i class="fa fa-map-marker" />
+            <div className="profile-location-icon">
+              <i class="fa fa-map-marker marker-i" />
             </div>
             <p>Location: </p>
-            <p>{this.state.user.location}</p>
+            <p
+              className="edit-location user-location"
+              data-toggle="modal"
+              data-target="#editProfile"
+            >
+              Montana
+              {this.state.user.location}
+            </p>
+          </div>
+        </div>
+
+        <div className="modal fade" id="editProfile" role="dialog">
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <i
+                  className="fa fa-user envelope-icon mr-2"
+                  style={{ fontSize: "20px" }}
+                />
+                <h5 className="modal-title" id="exampleModalLongTitle">
+                  Edit Profile
+                </h5>
+                <button className="close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <input type="text" className="modal-input-box" />
+              </div>
+              <div className="modal-footer">
+                <button
+                  className="btn btn-secondary invite-buttn"
+                  data-dismiss="modal"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

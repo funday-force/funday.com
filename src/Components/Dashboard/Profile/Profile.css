@@ -1,14 +1,3 @@
-#profile {
-  position: absolute;
-  display: block;
-  right: 0;
-  bottom: 0;
-  top: 25%;
-  left: 25%;
-  background-color: #ffffff;
-  width: 70%;
-}
-
 .img-username-container {
   position: absolute;
   display: block;
@@ -21,7 +10,6 @@
   padding-top: 70px;
   height: 300px;
   color: #fff;
-  /* width: 0%; */
 }
 
 .profile-header-img {
@@ -47,13 +35,15 @@
 }
 
 .overview {
-  position: relative;
-  right: 6%;
   font-size: 18px;
-  line-height: 1;
 }
 
-.fa-user {
+.overview-text {
+  position: relative;
+  right: 15px;
+}
+
+.user-i {
   position: relative;
   color: #4cc0ee;
   left: 12.5px;
@@ -69,19 +59,36 @@
   position: relative;
   right: 15px;
   bottom: 5px;
+  margin-bottom: 12px;
 }
 
 .title {
   display: flex;
 }
 
-.user-title-span {
+.edit-title,
+.edit-email {
+  transition: border 0.6s ease-in;
+  overflow: hidden;
+}
+
+.edit-title:hover,
+.edit-email:hover,
+.edit-phone:hover,
+.edit-location:hover {
+  border: 1px dotted rgb(187, 187, 187);
+  width: 250px;
+  padding: 0 5px;
+  overflow: hidden;
+}
+
+.user-title {
   color: #0086c3;
   position: relative;
   left: 10px;
 }
 
-.fa-envelope {
+.email-i {
   position: relative;
   color: #4cc0ee;
   left: 11px;
@@ -97,19 +104,20 @@
   position: relative;
   right: 15px;
   bottom: 5px;
+  margin-bottom: 12px;
 }
 
-.email {
+.profile-email {
   display: flex;
 }
 
-.user-email-span {
+.user-email {
   color: #0086c3;
   position: relative;
   left: 10px;
 }
 
-.fa-phone {
+.phone-i {
   position: relative;
   color: #4cc0ee;
   left: 11px;
@@ -125,19 +133,20 @@
   position: relative;
   right: 15px;
   bottom: 5px;
+  margin-bottom: 12px;
 }
 
 .phone {
   display: flex;
 }
 
-.user-phone-span {
+.user-phone {
   color: #0086c3;
   position: relative;
   left: 10px;
 }
 
-.fa-map-marker {
+.marker-i {
   position: relative;
   color: #4cc0ee;
   left: 13px;
@@ -145,7 +154,7 @@
   font-size: 22px;
 }
 
-.location-icon {
+.profile-location-icon {
   border: 1px solid #4cc0ee;
   width: 40px;
   height: 40px;
@@ -154,13 +163,14 @@
   right: 15px;
   bottom: 5px;
   background: #fff;
+  margin-bottom: 12px;
 }
 
 .location {
   display: flex;
 }
 
-.user-location-span {
+.user-location {
   color: #0086c3;
   position: relative;
   left: 10px;

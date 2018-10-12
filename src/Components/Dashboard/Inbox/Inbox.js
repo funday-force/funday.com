@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import './Inbox.css';
-import axios from 'axios';
-import Messages from './Messages';
+import React, { Component } from "react";
+import "./Inbox.css";
+import axios from "axios";
+import Message from "./Message";
+import funcs from "../../../utilities/functions";
 
 export default class Inbox extends Component {
   constructor(props) {
@@ -10,10 +11,11 @@ export default class Inbox extends Component {
     this.state = {
       user: {},
       messages: [],
-      message: ''
+      message: ""
     };
 
     this.deleteMessage = this.deleteMessage.bind(this);
+    this.updateMessage = this.updateMessage.bind(this);
   }
 
   handleInput(val) {
@@ -23,14 +25,14 @@ export default class Inbox extends Component {
   }
 
   componentDidMount() {
-    axios.get('/api/user-data').then(res => {
+    axios.get("/api/user-data").then(res => {
       console.log(res.data);
       this.setState({
         user: res.data
       });
     });
 
-    axios.get('/api/messages').then(res => {
+    axios.get("/api/messages").then(res => {
       console.log(res.data);
       this.setState({
         messages: res.data
@@ -41,21 +43,10 @@ export default class Inbox extends Component {
   addMessage() {
     var date = new Date();
     date =
-      date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear();
+      date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear();
     const user_id = this.state.user.user_id;
     const { message } = this.state;
-    axios.post('/api/messages', { user_id, message, date }).then(res => {
-      console.log(res.data);
-      this.setState({
-        messages: res.data,
-        message: ''
-      });
-    });
-  }
-
-  deleteMessage(id) {
-    console.log(id);
-    axios.delete(`/api/messages/${id}`).then(res => {
+    axios.post("/api/messages", { user_id, message, date }).then(res => {
       console.log(res.data);
       this.setState({
         messages: res.data
@@ -63,9 +54,15 @@ export default class Inbox extends Component {
     });
   }
 
-  updateMessage(id) {
-    const { message } = this.state;
+  deleteMessage(id) {
+    funcs.deleteMessage(`/api/messages/${id}`).then(data => {
+      this.setState({
+        messages: data
+      });
+    });
+  }
 
+  updateMessage(id, message) {
     axios.put(`/api/messages/${id}`, { message }).then(res => {
       this.setState({
         messages: res.data
@@ -74,6 +71,19 @@ export default class Inbox extends Component {
   }
 
   render() {
+    let mappedMessages = this.state.messages.map((message, i) => {
+      console.log(message);
+      return (
+        <Message
+          key={message.message_id}
+          message={message}
+          id={message.message_id}
+          deleteMessage={this.deleteMessage}
+          user={this.state.user}
+          updateMessage={this.updateMessage}
+        />
+      );
+    });
     return (
       <div>
         <button
@@ -84,7 +94,7 @@ export default class Inbox extends Component {
           <i className="fa fa-plus pr-2" />
           New Message
         </button>
-        <div id="inbox" className="container bg-light">
+        <div id="inbox" className="container">
           <div className="row">
             <div className="col-md-8 mr-auto">
               <h2 className="inbox-title">Inbox</h2>
@@ -97,12 +107,7 @@ export default class Inbox extends Component {
               </div>
 
               {this.state.messages.length !== 0 ? (
-                <Messages
-                  deleteMessage={this.deleteMessage}
-                  user={this.state.user}
-                  messages={this.state.messages}
-                  updateMessage={this.updateMessage}
-                />
+                mappedMessages
               ) : (
                 <div className="inbox-hero">
                   <img
@@ -163,7 +168,7 @@ export default class Inbox extends Component {
                   <button
                     onClick={() => this.addMessage()}
                     type="button"
-                    className="btn btn-primary"
+                    className="btn btn-primary send-message"
                     data-dismiss="modal"
                   >
                     Send message

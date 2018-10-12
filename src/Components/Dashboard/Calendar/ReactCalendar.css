@@ -120,14 +120,6 @@ button.react-calendar__tile--active:enabled:focus {
   padding: 10px;
 }
 
-button.react-calendar__tile
-  react-calendar__tile--now
-  react-calendar__tile--active
-  react-calendar__tile--rangeStart
-  react-calendar__tile--rangeEnd
-  react-calendar__tile--rangeBothEnds
-  react-calendar__month-view__days__day
-  days {
-  color: white;
-  font-weight: 500;
-}
+/* .react-calendar__tile {
+  height: 60px;
+} */

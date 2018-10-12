@@ -9,6 +9,9 @@ export default class Boards extends Component {
       <div>
         <Header />
         <Navbar />
+        <div className="boards-header">
+          <h1>Board1</h1>
+        </div>
         <DragnDrop />
       </div>
     );

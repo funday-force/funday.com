@@ -3,7 +3,7 @@
   display: block;
   right: 0;
   bottom: 0;
-  top: 8.5%;
+  top: 8.7%;
   left: 17%;
   background-color: #0fa2e2;
   text-align: center;
@@ -174,4 +174,18 @@
   color: #0086c3;
   position: relative;
   left: 10px;
+}
+
+.profile-modal-content {
+  border-top: 4px solid #4cc0ee;
+  border-radius: 0;
+}
+
+.invite-buttn {
+  border: 1px solid #0fa2e2;
+}
+
+.profile-input:focus {
+  outline: none !important;
+  border: 1px solid #4cc0ee;
 }

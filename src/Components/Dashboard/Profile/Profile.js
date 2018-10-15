@@ -10,7 +10,8 @@ export default class Profile extends Component {
 
     this.state = {
       user: {},
-      editing: false
+      editing: false,
+      input: ""
     };
   }
 
@@ -19,6 +20,12 @@ export default class Profile extends Component {
       this.setState({
         user: res.data
       });
+    });
+  }
+
+  handleInput(val) {
+    this.setState({
+      input: val
     });
   }
 
@@ -52,7 +59,6 @@ export default class Profile extends Component {
               data-toggle="modal"
               data-target="#editProfile"
             >
-              Hello
               {this.state.user.title}
             </p>
           </div>
@@ -79,7 +85,6 @@ export default class Profile extends Component {
               data-toggle="modal"
               data-target="#editProfile"
             >
-              555-555-5555
               {this.state.user.phone}
             </p>
           </div>
@@ -93,39 +98,8 @@ export default class Profile extends Component {
               data-toggle="modal"
               data-target="#editProfile"
             >
-              Montana
               {this.state.user.location}
             </p>
-          </div>
-        </div>
-
-        <div className="modal fade" id="editProfile" role="dialog">
-          <div className="modal-dialog" role="document">
-            <div className="modal-content">
-              <div className="modal-header">
-                <i
-                  className="fa fa-user envelope-icon mr-2"
-                  style={{ fontSize: "20px" }}
-                />
-                <h5 className="modal-title" id="exampleModalLongTitle">
-                  Edit Profile
-                </h5>
-                <button className="close" data-dismiss="modal">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div className="modal-body">
-                <input type="text" className="modal-input-box" />
-              </div>
-              <div className="modal-footer">
-                <button
-                  className="btn btn-secondary invite-buttn"
-                  data-dismiss="modal"
-                >
-                  Save
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </div>

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./Inbox.css";
 import axios from "axios";
 import Message from "./Message";
-import funcs from "../../../utilities/functions";
 
 export default class Inbox extends Component {
   constructor(props) {
@@ -55,9 +54,11 @@ export default class Inbox extends Component {
   }
 
   deleteMessage(id) {
-    funcs.deleteMessage(`/api/messages/${id}`).then(data => {
+    console.log(id);
+    axios.delete(`/api/messages/${id}`).then(res => {
+      console.log(res.data);
       this.setState({
-        messages: data
+        messages: res.data
       });
     });
   }
@@ -168,7 +169,7 @@ export default class Inbox extends Component {
                   <button
                     onClick={() => this.addMessage()}
                     type="button"
-                    className="btn btn-primary send-message"
+                    className="btn btn-primary"
                     data-dismiss="modal"
                   >
                     Send message

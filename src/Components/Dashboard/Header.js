@@ -14,18 +14,18 @@ class Header extends React.Component {
     };
   }
   componentDidMount() {
-    let results = funcs.getUsersRequest();
-    results.then(res => {
-      console.log(res);
-      this.setState({
-        user: res
-      });
-    });
-    // axios.get("/api/user-data").then(res => {
+    // let results = funcs.getUsersRequest();
+    // results.then(res => {
+    //   console.log(res);
     //   this.setState({
-    //     user: res.data
+    //     user: res
     //   });
     // });
+    axios.get("/api/user-data").then(res => {
+      this.setState({
+        user: res.data
+      });
+    });
   }
   render() {
     return (

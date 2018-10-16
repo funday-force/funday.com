@@ -3,6 +3,10 @@ const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const massive = require('massive');
+
+const nodemailer = require('nodemailer');
+const creds = require('./creds');
+
 const authCtrl = require('./auth-controller');
 const userCtrl = require('./users-controller');
 const teamCtrl = require('./team-controller');
@@ -17,10 +21,43 @@ const app = express();
 // Destructure from .env
 const { SERVER_PORT, CONNECTION_STRING, SECRET, NODE_ENV } = process.env;
 
-// database connection
-massive(CONNECTION_STRING).then(db => {
-  app.set('db', db);
-  console.log('Connected to DB');
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use((request, response, next) => {
+  response.header('Access-Control-Allow-Origin', '*');
+  response.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
+
+app.post('/send-email', function(req, res) {
+  let transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+      user: creds.USER,
+      pass: creds.PASS
+    }
+  });
+
+  let content = `Thanks for signing up to Funday.com! You are now ready to invite members to your team. Sign in to the dashboard on Funday.com and send your team members an invite.`;
+
+  let mailOptions = {
+    from: creds.USER, // sender address
+    to: 'hunterluker1992@gmail.com', // list of receivers
+    subject: 'Welcome to Funday.com', // Subject line
+    html: `<h2 style="background: #0e0520; color: white; padding: 10px; border: 3px solid #45336b; text-align: center">${content}</h2>` // html body
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      return console.log(error);
+    }
+
+    console.log('Message %s sent: %s', info.messageId, info.response);
+    res.redirect('http://localhost:3000/#/dashboard');
+  });
 });
 
 // Middleware
@@ -32,6 +69,12 @@ app.use(
     saveUninitialized: true
   })
 );
+
+// database connection
+massive(CONNECTION_STRING).then(db => {
+  app.set('db', db);
+  console.log('Connected to DB');
+});
 
 // AUTH ENDPOINTS
 app.get(`/auth/callback`, authCtrl.login);
@@ -49,6 +92,8 @@ function envCheck(req, res, next) {
     next();
   }
 }
+
+// AUTH ENDPOINTS
 
 app.get(`/api/user-data`, envCheck, authCtrl.userData);
 

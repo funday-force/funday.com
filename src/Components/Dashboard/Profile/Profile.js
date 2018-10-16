@@ -136,6 +136,7 @@ export default class Profile extends Component {
                   className="modal-input-box profile-input"
                   name="title"
                   onChange={this.onChange}
+                  defaultValue={this.state.user.title}
                 />
                 <label htmlFor="email">Email</label>
                 <input
@@ -143,6 +144,7 @@ export default class Profile extends Component {
                   className="modal-input-box profile-input"
                   name="email"
                   onChange={this.onChange}
+                  defaultValue={this.state.user.email}
                 />
                 <label htmlFor="phone">Phone</label>
                 <input
@@ -150,6 +152,7 @@ export default class Profile extends Component {
                   className="modal-input-box profile-input"
                   name="phone"
                   onChange={this.onChange}
+                  defaultValue={this.state.user.phone}
                 />
                 <label htmlFor="location">Location</label>
                 <input
@@ -157,6 +160,7 @@ export default class Profile extends Component {
                   className="modal-input-box profile-input"
                   name="location"
                   onChange={this.onChange}
+                  defaultValue={this.state.user.location}
                 />
               </div>
               <div className="modal-footer profile-modal-footer">

@@ -22,9 +22,9 @@ module.exports = {
   updateUser: (req, res) => {
     const db = req.app.get("db");
     const { id } = req.params;
-    const { name, email, phone, location, title, picture } = req.body;
+    const { email, phone, location, title } = req.body;
 
-    db.update_user([name, email, phone, location, title, picture, id])
+    db.update_user([email, phone, location, title, id])
       .then(resp => {
         res.status(200).send(resp);
       })

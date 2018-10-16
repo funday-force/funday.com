@@ -78,6 +78,7 @@
 .edit-location:hover {
   border: 1px dotted rgb(187, 187, 187);
   width: 250px;
+  height: 30px;
   padding: 0 5px;
   overflow: hidden;
 }
@@ -176,16 +177,55 @@
   left: 10px;
 }
 
-.profile-modal-content {
-  border-top: 4px solid #4cc0ee;
-  border-radius: 0;
-}
-
 .invite-buttn {
   border: 1px solid #0fa2e2;
+}
+
+.profile-input {
+  height: 33px;
 }
 
 .profile-input:focus {
   outline: none !important;
   border: 1px solid #4cc0ee;
+}
+
+.profile-modal-content {
+  border-top: 4px solid #4cc0ee;
+  border-radius: 0;
+  box-shadow: 3px 15px 50px -5px #000;
+}
+
+.profile-modal-header {
+  border-bottom: none;
+}
+
+.profile-modal-footer {
+  border: none;
+}
+
+.profile-save-btn {
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 14px;
+}
+
+.profile-close {
+  color: white;
+  border: 2px solid white !important;
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+  padding-right: 6px !important;
+  padding-left: 6px !important;
+  border-radius: 50%;
+  position: relative;
+  bottom: 28px;
+  left: 24px;
+  background: black !important;
+}
+
+.profile-close:hover {
+  color: white !important;
 }

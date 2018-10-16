@@ -3,7 +3,6 @@ import Header from "../Header";
 import Navbar from "../side-navbar";
 import axios from "axios";
 import "./Profile.css";
-import Modal from "./Modal";
 
 export default class Profile extends Component {
   constructor() {
@@ -12,7 +11,10 @@ export default class Profile extends Component {
     this.state = {
       user: {},
       editing: false,
-      input: ""
+      title: "",
+      phone: "",
+      location: "",
+      email: ""
     };
   }
 
@@ -24,17 +26,19 @@ export default class Profile extends Component {
     });
   }
 
-  handleInput(val) {
-    this.setState({
-      input: val
-    });
+  onChange = e => this.setState({ [e.target.name]: e.target.value });
+
+  updateProfile() {
+    const { title, email, phone, location, user } = this.state;
+    axios
+      .put(`/api/users/${user.user_id}`, { title, email, phone, location })
+      .then(res => {
+        this.setState({ user: res.data[0] });
+      });
   }
 
-  updateUserProfile(field, profileInfo) {}
-
-  sendUpdatesToDb() {}
-
   render() {
+    console.log(this.state.user.title);
     return (
       <div>
         <Header />
@@ -105,6 +109,66 @@ export default class Profile extends Component {
             >
               {this.state.user.location}
             </p>
+          </div>
+        </div>
+        <div className="modal fade" id="editProfile" role="dialog">
+          <div
+            className="modal-dialog modal-dialog-centered profile-modal-dialog"
+            role="document"
+          >
+            <div className="modal-content p-2 profile-modal-content">
+              <div className="modal-header profile-modal-header">
+                <i
+                  className="fa fa-user envelope-icon mr-2"
+                  style={{ fontSize: "20px" }}
+                />
+                <h5 className="modal-title" id="exampleModalLongTitle">
+                  Edit Profile
+                </h5>
+                <button className="close profile-close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body ">
+                <label htmlFor="title">Title</label>
+                <input
+                  type="text"
+                  className="modal-input-box profile-input"
+                  name="title"
+                  onChange={this.onChange}
+                />
+                <label htmlFor="email">Email</label>
+                <input
+                  type="text"
+                  className="modal-input-box profile-input"
+                  name="email"
+                  onChange={this.onChange}
+                />
+                <label htmlFor="phone">Phone</label>
+                <input
+                  type="text"
+                  className="modal-input-box profile-input"
+                  name="phone"
+                  onChange={this.onChange}
+                />
+                <label htmlFor="location">Location</label>
+                <input
+                  type="text"
+                  className="modal-input-box profile-input"
+                  name="location"
+                  onChange={this.onChange}
+                />
+              </div>
+              <div className="modal-footer profile-modal-footer">
+                <button
+                  className="btn btn-secondary invite-buttn profile-save-btn"
+                  data-dismiss="modal"
+                  onClick={() => this.updateProfile()}
+                >
+                  Save
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -29,7 +29,8 @@ export default class Teams extends Component {
 
   handleInput(val) {
     this.setState({
-      input: funcs.handleInput(val)
+      // input: funcs.handleInput(val)
+      input: val
     });
   }
 

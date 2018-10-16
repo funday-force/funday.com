@@ -3,6 +3,7 @@ import Header from "../Header";
 import Navbar from "../side-navbar";
 import axios from "axios";
 import "./Profile.css";
+import Modal from "./Modal";
 
 export default class Profile extends Component {
   constructor() {
@@ -28,6 +29,10 @@ export default class Profile extends Component {
       input: val
     });
   }
+
+  updateUserProfile(field, profileInfo) {}
+
+  sendUpdatesToDb() {}
 
   render() {
     return (

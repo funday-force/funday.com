@@ -3,8 +3,8 @@
   display: block;
   right: 0;
   bottom: 0;
-  top: 8.7%;
-  left: 17%;
+  top: 7%;
+  left: 12.75%;
   background-color: #0fa2e2;
   text-align: center;
   padding-top: 70px;
@@ -27,8 +27,8 @@
 .overview-container {
   position: absolute;
   display: block;
-  left: 42%;
-  top: 51%;
+  left: 45%;
+  top: 45%;
   font-weight: 300;
   line-height: 2;
   box-sizing: border-box;

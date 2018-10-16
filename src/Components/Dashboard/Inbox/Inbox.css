@@ -3,7 +3,7 @@
   display: block;
   right: 0;
   bottom: 0;
-  top: 25%;
+  top: 18%;
   left: 25%;
   background-color: #ffffff;
   width: 70%;
@@ -19,7 +19,7 @@
   border-radius: 50px;
   position: absolute;
   top: 90px;
-  right: 245px;
+  right: 435px;
 }
 
 .inbox-title {

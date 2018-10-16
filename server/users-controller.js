@@ -1,6 +1,6 @@
 module.exports = {
   getUsers: (req, res) => {
-    const db = req.app.get('db');
+    const db = req.app.get("db");
 
     db.get_all_users()
       .then(resp => {
@@ -9,7 +9,7 @@ module.exports = {
       .catch(err => console.log(err));
   },
   removeUser: (req, res) => {
-    const db = req.app.get('db');
+    const db = req.app.get("db");
     const { id } = req.params;
 
     db.delete_user([id])
@@ -20,7 +20,7 @@ module.exports = {
   },
 
   updateUser: (req, res) => {
-    const db = req.app.get('db');
+    const db = req.app.get("db");
     const { id } = req.params;
     const { name, email, phone, location, title, picture } = req.body;
 

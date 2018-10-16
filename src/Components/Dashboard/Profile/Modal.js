@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export default class Modal extends Component {
   constructor() {
@@ -9,6 +10,12 @@ export default class Modal extends Component {
       profileInfo: ""
     };
   }
+
+  componentWillUnmount() {
+    // axios call
+    axios.put("/api/users");
+  }
+
   render() {
     return (
       <div>

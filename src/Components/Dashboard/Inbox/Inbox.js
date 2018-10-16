@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import './Inbox.css';
-import axios from 'axios';
-import Message from './Message';
+import React, { Component } from "react";
+import "./Inbox.css";
+import axios from "axios";
+import Message from "./Message";
 
 export default class Inbox extends Component {
   constructor(props) {
@@ -10,7 +10,7 @@ export default class Inbox extends Component {
     this.state = {
       user: {},
       messages: [],
-      message: ''
+      message: ""
     };
 
     this.deleteMessage = this.deleteMessage.bind(this);
@@ -24,14 +24,14 @@ export default class Inbox extends Component {
   }
 
   componentDidMount() {
-    axios.get('/api/user-data').then(res => {
+    axios.get("/api/user-data").then(res => {
       console.log(res.data);
       this.setState({
         user: res.data
       });
     });
 
-    axios.get('/api/messages').then(res => {
+    axios.get("/api/messages").then(res => {
       console.log(res.data);
       this.setState({
         messages: res.data
@@ -42,10 +42,10 @@ export default class Inbox extends Component {
   addMessage() {
     var date = new Date();
     date =
-      date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear();
+      date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear();
     const user_id = this.state.user.user_id;
     const { message } = this.state;
-    axios.post('/api/messages', { user_id, message, date }).then(res => {
+    axios.post("/api/messages", { user_id, message, date }).then(res => {
       console.log(res.data);
       this.setState({
         messages: res.data

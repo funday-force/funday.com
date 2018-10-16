@@ -5,6 +5,8 @@ import axios from 'axios';
 import './Teams.css';
 import ReactTooltip from 'react-tooltip';
 
+import funcs from '../../../utilities/functions';
+
 import teamIcon from '../../../images/team-icon.png';
 
 export default class Teams extends Component {
@@ -28,6 +30,7 @@ export default class Teams extends Component {
 
   handleInput(val) {
     this.setState({
+      // input: funcs.handleInput(val)
       input: val
     });
   }
@@ -95,7 +98,7 @@ export default class Teams extends Component {
               <i className="fa fa-search team-search-icon" />
               <input
                 onChange={e => this.handleInput(e.target.value)}
-                className="search-bar"
+                className="search-bar test-search"
                 type="search"
                 placeholder="Search by name"
               />

@@ -1,8 +1,9 @@
-import React from 'react';
-import logo from '../../images/headerlogo.png';
-import './Header.css';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import React from "react";
+import logo from "../../images/headerlogo.png";
+import "./Header.css";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import funcs from "../../utilities/functions";
 
 class Header extends React.Component {
   constructor(props) {
@@ -14,7 +15,14 @@ class Header extends React.Component {
     };
   }
   componentDidMount() {
-    axios.get('/api/user-data').then(res => {
+    // let results = funcs.getUsersRequest();
+    // results.then(res => {
+    //   console.log(res);
+    //   this.setState({
+    //     user: res
+    //   });
+    // });
+    axios.get("/api/user-data").then(res => {
       this.setState({
         user: res.data
       });
@@ -91,7 +99,7 @@ class Header extends React.Component {
               <div className="modal-header">
                 <i
                   className="fa fa-user envelope-icon mr-2"
-                  style={{ fontSize: '20px' }}
+                  style={{ fontSize: "20px" }}
                 />
                 <h5 className="modal-title" id="exampleModalLongTitle">
                   Invite Team Member

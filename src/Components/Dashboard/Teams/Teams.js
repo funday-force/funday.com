@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
-import Header from '../Header';
-import Navbar from '../side-navbar';
-import axios from 'axios';
-import './Teams.css';
-import ReactTooltip from 'react-tooltip';
+import React, { Component } from "react";
+import Header from "../Header";
+import Navbar from "../side-navbar";
+import axios from "axios";
+import "./Teams.css";
+import ReactTooltip from "react-tooltip";
 
-import teamIcon from '../../../images/team-icon.png';
+import funcs from "../../../utilities/functions";
+
+import teamIcon from "../../../images/team-icon.png";
 
 export default class Teams extends Component {
   constructor(props) {
@@ -13,12 +15,12 @@ export default class Teams extends Component {
 
     this.state = {
       team: [],
-      input: ''
+      input: ""
     };
   }
 
   componentDidMount() {
-    axios.get('/api/team').then(res => {
+    axios.get("/api/team").then(res => {
       this.setState({
         team: res.data
       });
@@ -27,6 +29,7 @@ export default class Teams extends Component {
 
   handleInput(val) {
     this.setState({
+      // input: funcs.handleInput(val)
       input: val
     });
   }
@@ -74,7 +77,7 @@ export default class Teams extends Component {
               <i className="fa fa-search team-search-icon" />
               <input
                 onChange={e => this.handleInput(e.target.value)}
-                className="search-bar"
+                className="search-bar test-search"
                 type="search"
                 placeholder="Search by name"
               />
@@ -109,7 +112,7 @@ export default class Teams extends Component {
               <div className="modal-header">
                 <i
                   className="fa fa-user envelope-icon mr-2"
-                  style={{ fontSize: '20px' }}
+                  style={{ fontSize: "20px" }}
                 />
                 <h5 className="modal-title" id="exampleModalLongTitle">
                   Invite Team Member

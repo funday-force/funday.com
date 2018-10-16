@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
-import Calendar from 'react-calendar/dist/entry.nostyle';
-import Navbar from '../side-navbar.js';
-import Header from '../Header.js';
-import './ReactCalendar.css';
+import React, { Component } from "react";
+import Calendar from "react-calendar/dist/entry.nostyle";
+import Navbar from "../side-navbar.js";
+import Header from "../Header.js";
+import "./ReactCalendar.css";
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default class ReactCalendar extends Component {
   constructor() {
     super();
     this.state = {
       date: new Date(),
-      input: ''
+      input: ""
     };
   }
 
   promptInput() {
-    var person = prompt('Please enter a todo:');
+    var person = prompt("Please enter a todo:");
     this.setState({
       input: person
     });
@@ -57,9 +57,9 @@ export default class ReactCalendar extends Component {
             onChange={this.onChange}
             value={this.state.date}
             tileContent={({ date, view }) =>
-              view === 'month' && date.getDay() === 0 ? this.state.input : null
+              view === "month" && date.getDay() === 0 ? this.state.input : null
             }
-            tileClassName={'days'}
+            tileClassName={"days"}
             onClickDay={() => this.promptInput()}
           />
         </div>

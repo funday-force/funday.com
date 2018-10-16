@@ -10,7 +10,8 @@
 
 .dropdown-menu {
   position: relative;
-  left: -50px !important;
+  left: -155px !important;
+  top: -90px !important;
 }
 
 .dropdown-item {
@@ -39,7 +40,7 @@
   float: right;
   position: relative;
   top: 18px;
-  left: 280px;
+  left: 420px;
 }
 
 .team-search-div input {
@@ -58,7 +59,7 @@
   float: right;
   position: relative;
   top: 20px;
-  left: 540px;
+  left: 680px;
   color: rgb(107, 107, 107);
   font-size: 24px;
 }
@@ -70,12 +71,13 @@
 .mapped {
   margin-top: 10px;
   position: relative;
+  width: 75%;
 }
 
 .team-mapped {
   margin-top: 10px;
   margin-right: 60px;
-  border-bottom: 0.5px solid gray;
+  border-bottom: 0.5px solid rgb(224, 224, 224);
   padding-bottom: 10px;
 }
 
@@ -87,7 +89,7 @@
 .team-mapped .name {
   margin-left: 10px;
   font-size: 16px;
-  color: rgb(0, 140, 255);
+  color: #428bca;
   position: relative;
   bottom: 5px;
 }
@@ -103,7 +105,7 @@
 .team-right .mail-icon {
   margin-left: 80px;
   font-size: 16px;
-  color: rgb(0, 140, 255);
+  color: #4cc0ee;
   padding: 10px 12px;
   border: 0.5px solid rgb(206, 206, 206);
   border-radius: 50%;
@@ -112,7 +114,7 @@
 .team-right .location-icon {
   margin-left: 70px;
   font-size: 18px;
-  color: rgb(0, 140, 255);
+  color: #4cc0ee;
   padding: 9px 15px;
   border: 0.5px solid rgb(206, 206, 206);
   border-radius: 50%;
@@ -121,4 +123,8 @@
 .team-right .teams-name span {
   margin-left: 70px;
   font-size: 14px;
+}
+
+span.email {
+  color: #428bca;
 }

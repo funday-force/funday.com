@@ -123,3 +123,11 @@ button.react-calendar__tile--active:enabled:focus {
 /* .react-calendar__tile {
   height: 60px;
 } */
+
+.calendar-input {
+  border: 0.5px solid rgb(207, 0, 0);
+  border-radius: 20px;
+  padding: 2px 10px;
+  color: white;
+  background: rgb(207, 0, 0);
+}

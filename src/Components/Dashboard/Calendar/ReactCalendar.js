@@ -11,14 +11,17 @@ export default class ReactCalendar extends Component {
     super();
     this.state = {
       date: new Date(),
-      input: ''
+      input: '',
+      day: ''
     };
   }
 
-  promptInput() {
+  promptInput(value) {
+    console.log(value);
     var person = prompt('Please enter a todo:');
     this.setState({
-      input: person
+      input: person,
+      day: value
     });
   }
 
@@ -45,22 +48,31 @@ export default class ReactCalendar extends Component {
 
           <div className="calendar-right">
             <Link to="/dashboard">
-              <i class="fa fa-envelope" />
+              <i className="fa fa-envelope" />
               <span className="inbox-span">Inbox</span>
             </Link>
             <Link to="/dashboard/teams">
-              <i class="fa fa-users" />
+              <i className="fa fa-users" />
               <span>Team</span>
             </Link>
           </div>
           <Calendar
             onChange={this.onChange}
             value={this.state.date}
-            tileContent={({ date, view }) =>
-              view === 'month' && date.getDay() === 0 ? this.state.input : null
-            }
+            tileContent={({ date, view }) => {
+              return view === 'month' && date.getDate() === this.state.day ? (
+                <span className="position-absolute">
+                  {' '}
+                  <br />
+                  <br />{' '}
+                  {this.state.input === '' ? null : (
+                    <p className="calendar-input">{this.state.input}</p>
+                  )}
+                </span>
+              ) : null;
+            }}
             tileClassName={'days'}
-            onClickDay={() => this.promptInput()}
+            onClickDay={value => this.promptInput(value.getDate())}
           />
         </div>
       </div>

@@ -1,8 +1,8 @@
 .boards-container {
-  position: relative;
+  position: absolute;
   top: 150px;
   left: 280px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .closeBtn {

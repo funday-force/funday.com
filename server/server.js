@@ -60,6 +60,37 @@ app.post('/send-email', function(req, res) {
   });
 });
 
+app.post('/add-member', function(req, res) {
+  let transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+      user: creds.USER,
+      pass: creds.PASS
+    }
+  });
+
+  const link = `<a href="http://localhost:3000/#/dashboard">Funday.com</a>`;
+  let content = `You have been invited to join Funday.com go to this link to join your team ${link}`;
+
+  let mailOptions = {
+    from: creds.USER, // sender address
+    to: 'hunterluker1992@gmail.com', // list of receivers
+    subject: 'Welcome to Funday.com', // Subject line
+    html: `<h2 style="background: #0e0520; color: white; padding: 10px; border: 3px solid #45336b; text-align: center">${content}</h2>` // html body
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      return console.log(error);
+    }
+
+    console.log('Message %s sent: %s', info.messageId, info.response);
+    res.redirect('http://localhost:3000/#/dashboard');
+  });
+});
+
 // Middleware
 app.use(bodyParser.json());
 app.use(

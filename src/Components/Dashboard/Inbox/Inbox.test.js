@@ -3,7 +3,65 @@ const MockAdapter = require("axios-mock-adapter");
 const axios = require("axios");
 
 let mock = new MockAdapter(axios);
+mock.onAny('/api/messages/1').reply(200, {
+  message: "Hello there"
+})
+console.log(funcs)
 
+
+/////////////// JACES TEST CODES /////////////////////
+describe("Update message", () => {
+  test("should update message", () => {
+    return funcs.updateMessage("/api/messages/1").then(data => {
+      console.log(data)
+      if(typeof data === "object")
+      return data;
+
+      expect(data).toEqual('object')
+    })
+  })
+})
+describe("Update message", () => {
+  test("should update message", () => {
+    return funcs.updateMessage("/api/messages/1").then(data => {
+      console.log(data)
+      if(typeof data === "string")
+      expect(mock.onAny).toHaveBeenCalledWith('/api/messages/1')
+      return data;
+    })
+  })
+})
+describe("Update message", () => {
+  test("should update message", () => {
+    return funcs.updateMessage("/api/messages/1").then(data => {
+      console.log(data)
+      if(typeof data === "string")
+      expect(mock.onAny).toBeFalsy()
+      return data;
+    })
+  })
+})
+describe("Update message", () => {
+  test("should update message", () => {
+    return funcs.updateMessage("/api/messages/1").then(data => {
+      console.log(data)
+      if(typeof data === "string")
+      expect(mock.onAny).toBeTruthy()
+      return data;
+    })
+  })
+})
+describe("Update message", () => {
+  test("should update message", () => {
+    return funcs.updateMessage("/api/messages/1").then(data => {
+      console.log(data)
+      if(typeof data === "string")
+      expect(mock.onAny).toEqual('')
+      return data;
+    })
+  })
+})
+//////////////////////////
 // TESSAS TEST - NOT TESSAS
 describe("handleInput method", () => {
   test("should return same string", () => {

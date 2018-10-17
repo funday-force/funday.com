@@ -12,5 +12,11 @@ module.exports = {
       console.log(res.data);
       return res.data;
     });
+  },
+  updateMessage: path => {
+    return axios.put(path).then( res => {
+      console.log(res.data);
+      return res.data
+    })
   }
 };

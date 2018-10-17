@@ -67,7 +67,7 @@
 .react-calendar {
   background: #1d1e3d;
   color: rgb(160, 160, 160);
-  font-family: "Roboto", helvetica, arial, sans-serif;
+  font-family: 'Roboto', helvetica, arial, sans-serif;
   width: 100%;
   height: auto;
 }
@@ -82,7 +82,7 @@
   height: 100%;
   display: flex;
   justify-content: flex-end;
-  font-family: "Roboto", helvetica, arial, sans-serif;
+  font-family: 'Roboto', helvetica, arial, sans-serif;
   font-size: 100%;
   padding-top: 0px;
   padding-right: 1px;
@@ -130,6 +130,17 @@ button.react-calendar__tile--active:enabled:focus {
   font-size: 25px;
 }
 
+/* .react-calendar__tile {
+  height: 60px;
+} */
+
+.calendar-input {
+  border: 0.5px solid rgb(207, 0, 0);
+  border-radius: 20px;
+  padding: 2px 10px;
+  color: white;
+  background: rgb(207, 0, 0);
+}
 .react-calendar__navigation__prev2-button {
   font-size: 25px;
 }

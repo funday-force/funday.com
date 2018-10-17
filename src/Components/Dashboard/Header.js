@@ -10,7 +10,8 @@ class Header extends React.Component {
     super(props);
 
     this.state = {
-      user: {}
+      user: {},
+      email: ''
     };
   }
   componentDidMount() {
@@ -27,6 +28,27 @@ class Header extends React.Component {
       });
     });
   }
+
+  handleEmail(val) {
+    this.setState({
+      email: val
+    });
+  }
+
+  handleSubmit = async e => {
+    await axios
+      .post('http://localhost:3010/add-member')
+      .then(function(response) {
+        console.log(response);
+        this.setState({
+          email: ''
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  };
+
   render() {
     return (
       <div className="header-nav">
@@ -88,10 +110,19 @@ class Header extends React.Component {
               </div>
               <h6 className="modal-h6">Enter one email address:</h6>
               <div className="modal-body">
-                <input type="text" className="modal-input-box" />
+                <input
+                  type="text"
+                  className="modal-input-box"
+                  id="email"
+                  name="email"
+                  value={this.state.email}
+                  onChange={e => this.handleEmail(e.target.value)}
+                  required
+                />
               </div>
               <div className="modal-footer">
                 <button
+                  onClick={this.handleSubmit}
                   className="btn btn-secondary invite-buttn"
                   data-dismiss="modal"
                 >

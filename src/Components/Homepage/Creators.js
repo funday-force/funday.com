@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 // IMAGES
 import hunter from '../../images/hunter.jpeg';
@@ -6,11 +7,38 @@ import larry from '../../images/Larry.jpg';
 import arrow from '../../images/arrow.PNG';
 import actionLeft from '../../images/action-left.PNG';
 import actionRight from '../../images/action-right.PNG';
-
 import funday from '../../images/funday-force-logo.jpg';
 import fundayBlack from '../../images/funday-force-black.jpg';
 
 export default class Creators extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      email: ''
+    };
+  }
+
+  handleEmail(val) {
+    this.setState({
+      email: val
+    });
+  }
+
+  handleSubmit = async e => {
+    await axios
+      .post('http://localhost:3010/send-email')
+      .then(function(response) {
+        console.log(response);
+        this.setState({
+          email: ''
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  };
+
   render() {
     return (
       <div>
@@ -62,13 +90,18 @@ export default class Creators extends Component {
                   <span className="text-success">Try it for free.</span>
                 </h1>
 
-                <form action="">
+                <form onSubmit={this.handleSubmit}>
                   <img src={actionLeft} alt="action-left" className="mr-3" />
                   <img src="" alt="" />
                   <input
+                    id="email"
+                    name="email"
+                    value={this.state.email}
                     className="form-input"
                     type="text"
                     placeholder="Enter your work email"
+                    onChange={e => this.handleEmail(e.target.value)}
+                    required
                   />
                   <button className="form-button btn">
                     Create free account

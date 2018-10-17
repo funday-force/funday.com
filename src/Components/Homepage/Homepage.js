@@ -41,7 +41,7 @@ export default class Homepage extends Component {
 
             <ul className="navbar-nav ml-auto">
               <li className="nav-item ">
-                <a href="#product" className="nav-link product">
+                <a href="#product" className="nav-link">
                   Product
                 </a>
               </li>
@@ -71,7 +71,9 @@ export default class Homepage extends Component {
         </nav>
 
         <Hero />
-        <Product />
+        <section id="product">
+          <Product />
+        </section>
         <GetToWork />
         <Creators />
         <Footer />

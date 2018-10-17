@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import Header from "../Header";
-import Navbar from "../side-navbar";
-import axios from "axios";
-import "./Teams.css";
-import ReactTooltip from "react-tooltip";
+import React, { Component } from 'react';
+import Header from '../Header';
+import Navbar from '../side-navbar';
+import axios from 'axios';
+import './Teams.css';
+import ReactTooltip from 'react-tooltip';
 
-import funcs from "../../../utilities/functions";
+import funcs from '../../../utilities/functions';
 
-import teamIcon from "../../../images/team-icon.png";
+import teamIcon from '../../../images/team-icon.png';
 
 export default class Teams extends Component {
   constructor(props) {
@@ -15,12 +15,13 @@ export default class Teams extends Component {
 
     this.state = {
       team: [],
-      input: ""
+      input: '',
+      email: ''
     };
   }
 
   componentDidMount() {
-    axios.get("/api/team").then(res => {
+    axios.get('/api/team').then(res => {
       this.setState({
         team: res.data
       });
@@ -33,6 +34,26 @@ export default class Teams extends Component {
       input: val
     });
   }
+
+  handleEmail(val) {
+    this.setState({
+      email: val
+    });
+  }
+
+  handleSubmit = async e => {
+    await axios
+      .post('http://localhost:3010/add-member')
+      .then(function(response) {
+        console.log(response);
+        this.setState({
+          email: ''
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  };
 
   render() {
     let mappedTeam = this.state.team
@@ -112,7 +133,7 @@ export default class Teams extends Component {
               <div className="modal-header">
                 <i
                   className="fa fa-user envelope-icon mr-2"
-                  style={{ fontSize: "20px" }}
+                  style={{ fontSize: '20px' }}
                 />
                 <h5 className="modal-title" id="exampleModalLongTitle">
                   Invite Team Member
@@ -123,10 +144,19 @@ export default class Teams extends Component {
               </div>
               <h6 className="modal-h6">Enter one email address:</h6>
               <div className="modal-body">
-                <input type="text" className="modal-input-box" />
+                <input
+                  type="text"
+                  className="modal-input-box"
+                  id="email"
+                  name="email"
+                  value={this.state.email}
+                  onChange={e => this.handleEmail(e.target.value)}
+                  required
+                />
               </div>
               <div className="modal-footer">
                 <button
+                  onClick={this.handleSubmit}
                   className="btn btn-secondary invite-buttn"
                   data-dismiss="modal"
                 >

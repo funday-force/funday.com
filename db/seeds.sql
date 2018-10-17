@@ -106,11 +106,11 @@ create table rows
 (
     row_id serial primary key,
     table_id integer references tables(table_id),
-    title text,
     status text,
     text text,
     date text,
-    person text
+    user_id integer references users(user_id),
+    order_index integer
 )
 
 insert into rows

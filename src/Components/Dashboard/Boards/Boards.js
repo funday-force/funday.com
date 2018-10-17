@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import DragnDrop from './DragnDrop/DragnDrop';
+import Board from './Board';
 import Header from '../Header';
 import Navbar from '../side-navbar';
+import './Boards.css';
 
 export default class Boards extends Component {
   render() {
@@ -9,10 +10,10 @@ export default class Boards extends Component {
       <div>
         <Header />
         <Navbar />
-        <div className="boards-header">
-          <h1>Board1</h1>
+
+        <div className="boards-container">
+          <Board />
         </div>
-        <DragnDrop />
       </div>
     );
   }

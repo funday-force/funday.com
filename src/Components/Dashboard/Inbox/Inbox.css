@@ -16,6 +16,8 @@
 }
 
 .new-message-btn {
+  background: #00a1e5;
+  border: 1px solid #0fa2e2;
   border-radius: 50px;
   position: absolute;
   top: 90px;
@@ -72,3 +74,4 @@
 background: #00a1e5;
  border: 1px solid #0fa2e2;
 }
+

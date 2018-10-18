@@ -45,7 +45,7 @@ app.post('/send-email', function(req, res) {
 
   let mailOptions = {
     from: creds.USER, // sender address
-    to: 'hunterluker1992@gmail.com', // list of receivers
+    to: 'tessa.coddington1@gmail.com', // list of receivers
     subject: 'Welcome to Funday.com', // Subject line
     html: `<h2 style="background: #0e0520; color: white; padding: 10px; border: 3px solid #45336b; text-align: center">${content}</h2>` // html body
   };
@@ -76,7 +76,7 @@ app.post('/add-member', function(req, res) {
 
   let mailOptions = {
     from: creds.USER, // sender address
-    to: 'hunterluker1992@gmail.com', // list of receivers
+    to: 'tessa.coddington1@gmail.com', // list of receivers
     subject: 'Welcome to Funday.com', // Subject line
     html: `<h2 style="background: #0e0520; color: white; padding: 10px; border: 3px solid #45336b; text-align: center">${content}</h2>` // html body
   };

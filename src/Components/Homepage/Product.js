@@ -4,7 +4,7 @@ import './Homepage.css';
 export default class Product extends Component {
   render() {
     return (
-      <div>
+      <div id="uses-page">
         <div className="product-section">
           <div className="container product-container">
             <div className="row">

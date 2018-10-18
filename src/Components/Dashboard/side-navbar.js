@@ -55,10 +55,10 @@ class navbar extends React.Component {
                   <Link to="/dashboard/boards">Boards1</Link>
                 </li>
                 <li>
-                  <Link to="/dashboard/boards">Boards2</Link>
+                  <Link to="/dashboard/boardstwo">Boards2</Link>
                 </li>
                 <li>
-                  <Link to="/dashboard/boards">Boards3</Link>
+                  <Link to="/dashboard/boardsthree">Boards3</Link>
                 </li>
               </ul>
               <li>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 import logo from '../../images/fundaylogo.png';
 import $ from 'jquery';
 import './Homepage.css';
@@ -41,26 +42,26 @@ export default class Homepage extends Component {
 
             <ul className="navbar-nav ml-auto">
               <li className="nav-item ">
-                <a href="#product" className="nav-link">
+                <AnchorLink href="#product" className="nav-link">
                   Product
-                </a>
+                </AnchorLink>
               </li>
               <li className="nav-item">
-                <a href="#uses" className="nav-link use-cases">
+                <AnchorLink href="#uses-page" className="nav-link use-cases">
                   Use Cases
-                </a>
+                </AnchorLink>
               </li>
 
               <li className="nav-item">
-                <a href="#why" className="nav-link why">
+                <AnchorLink href="#why" className="nav-link why">
                   Why funday.com
-                </a>
+                </AnchorLink>
               </li>
 
               <li className="nav-item">
-                <a href="#creators" className="nav-link creators">
+                <AnchorLink href="#creators" className="nav-link creators">
                   Creators
-                </a>
+                </AnchorLink>
               </li>
 
               <li className="nav-item login-btn" onClick={this.login}>
@@ -71,9 +72,7 @@ export default class Homepage extends Component {
         </nav>
 
         <Hero />
-        <section id="product">
-          <Product />
-        </section>
+        <Product />
         <GetToWork />
         <Creators />
         <Footer />

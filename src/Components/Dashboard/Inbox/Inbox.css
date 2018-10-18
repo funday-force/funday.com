@@ -75,3 +75,7 @@ background: #00a1e5;
  border: 1px solid #0fa2e2;
 }
 
+.messages-modal-content {
+  border-top: 4px solid #4cc0ee;
+  border-radius: 0;
+}

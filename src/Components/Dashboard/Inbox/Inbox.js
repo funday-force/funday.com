@@ -131,7 +131,7 @@ export default class Inbox extends Component {
             aria-hidden="true"
           >
             <div className="modal-dialog" role="document">
-              <div className="modal-content">
+              <div className="modal-content messages-modal-content" >
                 <div className="modal-header">
                   <h5 className="modal-title" id="exampleModalLabel">
                     <i className="fa fa-envelope pr-2" /> New message

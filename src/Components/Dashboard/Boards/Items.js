@@ -11,28 +11,7 @@ export default class Items extends React.Component {
       description: '',
       newItem: '',
       clicked: '',
-      items: [
-        {
-          id: 0,
-          content: 'In progress',
-          description: ''
-        },
-        {
-          id: 1,
-          content: 'Work on creating header and navbar',
-          description: ''
-        },
-        {
-          id: 2,
-          content: 'Fix bug in dashboard',
-          description: ''
-        },
-        {
-          id: 3,
-          content: 'Study react-beautiful-dragndrop',
-          description: ''
-        }
-      ]
+      items: []
     };
     this.update = this.update.bind(this);
   }

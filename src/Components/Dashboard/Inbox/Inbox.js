@@ -169,7 +169,7 @@ export default class Inbox extends Component {
                   <button
                     onClick={() => this.addMessage()}
                     type="button"
-                    className="btn btn-primary"
+                    className="btn btn-primary messages-btn"
                     data-dismiss="modal"
                   >
                     Send message

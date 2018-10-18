@@ -62,7 +62,7 @@ export default class Teams extends Component {
         return (
           <div className="team-mapped" key={user.user_id}>
             <span className="team-left">
-              <img src={user.picture} />
+              <img src={user.picture} alt="profile-pic" />
               <span className="name">{user.user_name}</span>
             </span>
             <div className="team-right">
@@ -91,7 +91,7 @@ export default class Teams extends Component {
         <Navbar />
         <div className="team-div">
           <div className="team-top">
-            <img src={teamIcon} className="mr-3" />
+            <img src={teamIcon} className="mr-3" alt="team-profile" />
             <span>Everyone at Funday</span>
 
             <div className="team-search-div">

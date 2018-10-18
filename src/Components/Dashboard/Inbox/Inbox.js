@@ -131,14 +131,14 @@ export default class Inbox extends Component {
             aria-hidden="true"
           >
             <div className="modal-dialog" role="document">
-              <div className="modal-content">
+              <div className="modal-content messages-modal-content" >
                 <div className="modal-header">
                   <h5 className="modal-title" id="exampleModalLabel">
                     <i className="fa fa-envelope pr-2" /> New message
                   </h5>
                   <button
                     type="button"
-                    className="close"
+                    className="close message-close"
                     data-dismiss="modal"
                     aria-label="Close"
                   >
@@ -169,7 +169,7 @@ export default class Inbox extends Component {
                   <button
                     onClick={() => this.addMessage()}
                     type="button"
-                    className="btn btn-primary"
+                    className="btn btn-primary messages-btn"
                     data-dismiss="modal"
                   >
                     Send message

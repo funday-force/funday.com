@@ -16,6 +16,8 @@
 }
 
 .new-message-btn {
+  background: #00a1e5;
+  border: 1px solid #0fa2e2;
   border-radius: 50px;
   position: absolute;
   top: 90px;
@@ -51,4 +53,30 @@
   left: 100px;
   bottom: 35px;
   font-size: 0.9rem;
+}
+
+.message-close {
+ color: white;
+ border: 2px solid white !important;
+ padding: 2px 6px 2px 6px !important;
+ border-radius: 50%;
+ position: relative;
+ bottom: 16px;
+ left: 16px;
+ background: black !important; 
+}
+
+.message-close:hover {
+  color: white !important;
+}
+
+.messages-btn {
+background: #00a1e5;
+ border: 1px solid #0fa2e2;
+}
+
+.messages-modal-content {
+  border-top: 4px solid #4cc0ee;
+  border-radius: 0;
+  box-shadow: 3px 15px 50px -5px #000;
 }

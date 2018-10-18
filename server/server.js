@@ -41,13 +41,13 @@ app.post('/send-email', function(req, res) {
     }
   });
 
-  let content = `Thanks for signing up to Funday.com! You are now ready to invite members to your team. Sign in to the dashboard on Funday.com and send your team members an invite.`;
+  let content = `Thanks for signing up to Funday.com! You are now ready to invite members to your team. Sign in to the dashboard on Funday.com and send your team members an invite. <a href="http://localhost:3000/#/">Funday.com</a>`;
 
   let mailOptions = {
     from: creds.USER, // sender address
     to: 'tessa.coddington1@gmail.com', // list of receivers
     subject: 'Welcome to Funday.com', // Subject line
-    html: `<h2 style="background: #0e0520; color: white; padding: 10px; border: 3px solid #45336b; text-align: center">${content}</h2>` // html body
+    html: `<h2 style="color: black; padding: 10px; border: 3px solid #45336b; text-align: center">${content}</h2>` // html body
   };
 
   transporter.sendMail(mailOptions, (error, info) => {

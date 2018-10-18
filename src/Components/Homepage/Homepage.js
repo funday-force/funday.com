@@ -42,7 +42,7 @@ export default class Homepage extends Component {
 
             <ul className="navbar-nav ml-auto">
               <li className="nav-item ">
-                <AnchorLink href="#product" className="nav-link">
+                <AnchorLink href="#product" className="nav-link product">
                   Product
                 </AnchorLink>
               </li>

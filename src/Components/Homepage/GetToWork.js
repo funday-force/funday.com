@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class GetToWork extends Component {
   render() {
     return (
-      <div className="gettowork-section bg-light my-5">
+      <div id="why" className="gettowork-section bg-light my-5">
         <div className="container">
           <div className="row">
             <div className="col-lg-10 mx-auto mt-5">

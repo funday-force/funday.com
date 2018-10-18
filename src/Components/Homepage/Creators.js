@@ -41,7 +41,7 @@ export default class Creators extends Component {
 
   render() {
     return (
-      <div>
+      <div id="creators">
         <div className="creators-section my-5">
           <div className="container">
             <div className="row">

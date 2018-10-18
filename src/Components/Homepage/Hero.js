@@ -37,7 +37,7 @@ export default class Hero extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container" id="product">
         <div className="hero-container">
           <h1 className="display-4">
             A new way to manage your <span>task</span>
